@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title> GDC - Lab Three</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="author" content="Bibhas Sharma">
+</head>
+
+<style>
+    section {
+        background: #111;
+    }
+
+</style>
+
+<body>
+    <header class="">
+        <a href="index.html" class="logo">Game Dev Club</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="https://ihsgamedev.org/#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="https://ihsgamedev.org/#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="https://ihsgamedev.org/#faq" onclick="toggleMenu();">FAQ</a></li>
+            <li><a href="https://ihsgamedev.org/#contact" onclick="toggleMenu();">Contact</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <div class="slidesEmbed">
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRe5wn6k33q90KEt5qwyXxZuF9s8kLzRx5Fhjr48FmKlnccD6wdZwbDzbWTzaptz4jlsMWC2C1ftxIo/embed?start=false&loop=false&delayms=60000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div><br>
+        <div style="text-align: center;">
+            <a href="https://docs.google.com/document/d/1mjs5jc0G0cdq7JMZ-qeMY1ZL17RGm0qtmM_317GDnpU/edit" class="button" target="_blank"> Lab Document </a>
+        </div>
+        <div style="text-align: center;">
+            <a href="labs.html" class="button"> Back to Labs </a>
+        </div>
+
+        <video width="320" height="240" controls>
+            <source src="videos/Lab%203%20Demonstration.mp4" type="video/mp4">
+            <source src="videos/Lab%203%20Demonstration.mkv" type="video/mkv">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!--
+    <section class="documents">
+        <div class="">
+            <div class="">
+                <p>Tweens are a very exhaustive unit that covers a lot of content, but can lead to many headaches if not done correctly. Thankfully, I’m here to experience those headaches for you! Here is an exercise to complete: This one may take a bit longer, about 45 minutes to an hour. As always, if you find some things are taking significantly longer than expected, contact me immediately.</p><br>
+                <p>Like before, Good Godot conventions are expected. This time, I want you to refactor the default CharacterBody script to use GetAxis instead of GetVector and eliminate jumping. The only inputs you will check are left, right, and clicking (which you must create an input for in the InputMap).</p><br>
+
+                <li>Access the Assets folder at <a href="http://bit.ly/3Rjmtt2" target="_blank">here</a>. It will have the images you need for this lab. It also has the demonstration for Lab 3 if you want to see the end product. You need Sky, Ocean, and Boat.</li>
+                <li>Set the sky as the background and put the ocean on the floor. There is a neat way to cover a good amount of length without creating super-stretched sprites or creating 3 of them.</li>
+                <ul>
+                    <li>Under “Texture” of CanvasItem, enable the Repeat</li>
+                    <li>Under “Region” of the Sprite2D, check the Enabled</li>
+                    <li>Click Edit Region and drag the box around the image</li>
+                    <li>Hit “Close”, and then in the Inspector, triple the width of the region/increase it to 2000</li>
+                    <li>Another note to consider is that you will probably need to adjust the Z Index of the “Ordering” under the Canvas item to ensure the correct item appears on the top. It is intuitive; the higher the Z Index, the higher its level appears in the Global scope. It is required that the Bullet > Sea > Boat > Sky, so keep that in mind.</li>
+                </ul>
+                <img>
+                <p>Do this for both the ocean and the sky’s Sprite2Ds. Remember it will only repeat when you manually overflow the region, not adjust the scale as you are used to in the inspector.</p>
+                <li>The ocean must respond to collisions to prevent the player from falling. However, this time, use a CollisionPolygon2D. You need to draw the shape's vertices and hit enter when you’re done: draw them in a U formation so that the boat does not accidentally sail off the waters. I would also recommend keeping the inside vertices low in height so that the boat has the illusion of being in the waves rather than floating above them.</li>
+
+                <li>The boat is next. It should be able to move left and right. Use a circle or capsule: even if it does not line up with the boundaries very well, it will better support the rotation. Now, do your best to implement a slight rocking back and forth using a Tween, across 20 degrees of rotation. Some things to remember:</li>
+                <ol>
+                    <li>You will need two tweeners (tween properties), one forward and one backward, with a duration of three seconds each</li>
+                    <li>The tween property name is “rotation_degrees.”</li>
+                    <li>This needs to occur for a hypothetically infinite duration</li>
+                    <li>The 10 degrees should be made relative to the boat’s angle without any extraneous calculations</li>
+                </ol>
+                <li>Now that your boat is rocking back and forth, let’s add a camera so the boat can’t wander off-screen. The camera should have:</li>
+                <ul>
+                    <li>Y-offset so that the boat appears to be close to the bottom of the screen, as in the demonstration</li>
+                    <li>Left limits and Right limits on the same points as the ocean’s borders. When done correctly, the player should not be able to view past the ends of the ocean.</li>
+                    <li>Remember that the inspector can adjust all of these properties. A script for the Camera2D is not required.</li>
+                </ul>
+                <li>Lastly, the firing scheme. Create a Sprite2D called Bullet and save it as a scene. It may be the default Godot icon. Then, load the scene into your player class as a PackedScene. Instantiate the PackedScene as a Bullet Node2D when the user clicks their mouse. Then, simply animate the bullet’s position to the user’s local mouse position, wherever it may be, across the course of 1 second.</li>
+                <p><i>Advanced: Do not allow more than one bullet to be fired at once, AND delete the bullet using the tween directly once the animation is complete.</i></p>
+            </div>
+        </div>
+
+    </section>
+-->
+
+</body>
+
+<script type="text/javascript">
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('header')
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+    function toggleMenu() {
+        var menuToggle = document.querySelector('.toggle');
+        var menu = document.querySelector('.menu');
+        menuToggle.classList.toggle('active');
+        menu.classList.toggle('active');
+    }
+
+</script>
+
+</html>

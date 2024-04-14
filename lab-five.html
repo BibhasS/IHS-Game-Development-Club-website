@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title> GDC - Lab Five</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="author" content="Bibhas Sharma">
+</head>
+
+<style>
+    section {
+        background: #111;
+    }
+
+
+
+</style>
+
+<body>
+    <header class="">
+        <a href="index.html" class="logo">Game Dev Club</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="https://ihsgamedev.org/#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="https://ihsgamedev.org/#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="https://ihsgamedev.org/#faq" onclick="toggleMenu();">FAQ</a></li>
+            <li><a href="https://ihsgamedev.org/#contact" onclick="toggleMenu();">Contact</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <div class="slidesEmbed">
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTCbnfVfNF78FpAHnFTON8Ez1l9ua1x5Uc0IeG95cbESq0OTk9erIyXyIoexmbjxlB79Ts5kYDOekgc/embed?start=false&loop=false&delayms=60000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div><br>
+        <div style="text-align: center;">
+            <a href="https://docs.google.com/document/d/17WNVpOoBpooAmAquM2Mjf9gpttkl-PViChi8sxefJQY/edit" class="button" target="_blank"> Lab Document </a>
+        </div>
+        <div style="text-align: center;">
+            <a href="labs.html" class="button"> Back to Labs </a>
+        </div>
+
+        <video width="320" height="240" controls>
+            <source src="videos/Lab%205%20Demonstration.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+    </section>
+
+
+
+</body>
+
+<script type="text/javascript">
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('header')
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+    function toggleMenu() {
+        var menuToggle = document.querySelector('.toggle');
+        var menu = document.querySelector('.menu');
+        menuToggle.classList.toggle('active');
+        menu.classList.toggle('active');
+    }
+
+</script>
+
+</html>

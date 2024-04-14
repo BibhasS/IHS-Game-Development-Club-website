@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- 
+██████╗░██╗██████╗░██╗░░██╗░█████╗░░██████╗
+██╔══██╗██║██╔══██╗██║░░██║██╔══██╗██╔════╝
+██████╦╝██║██████╦╝███████║███████║╚█████╗░
+██╔══██╗██║██╔══██╗██╔══██║██╔══██║░╚═══██╗
+██████╦╝██║██████╦╝██║░░██║██║░░██║██████╔╝
+╚═════╝░╚═╝╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░
+
+...............................................................................................
+...............................................................................................
+................,:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::,................
+..............;%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#%;..............
+.............?@@S*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*S@@?.............
+............:@@S...............................................................S@@:............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%...............................................................%@@;............
+............;@@%:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::%@@;............
+............;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@;............
+............;@@S+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++S@@;............
+............;@@%.............................*S#S*.............................%@@;............
+............;@@%............................+@@@@@+............................%@@;............
+............:@@S,............................*SUS*............................,S@@:............
+.............?@@#*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*#@@?.............
+..............;%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#%;..............
+................,,::::::::,,,,,,,,,,,,,,,,,,,:#@#:,,,,,,,,,,,,,,,,,,,::::::::,,................
+..........................+*******************@@@*******************+..........................
+.........................,#@@@@@@@@@@@@@@@@@@@###@@@@@@@@@@@@@@@@@@@#,.........................
+...........................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,...........................
+...............................................................................................
+..................██╗░░██╗░██████╗██████╗░██╗░░░██╗██╗██╗░░░░░██████╗░░██████╗.................
+..................██║░░██║██╔════╝██╔══██╗██║░░░██║██║██║░░░░░██╔══██╗██╔════╝.................
+..................███████║╚█████╗░██████╦╝██║░░░██║██║██║░░░░░██║░░██║╚█████╗░.................
+..................██╔══██║░╚═══██╗██╔══██╗██║░░░██║██║██║░░░░░██║░░██║░╚═══██╗.................
+..................██║░░██║██████╔╝██████╦╝╚██████╔╝██║███████╗██████╔╝██████╔╝.................
+..................╚═╝░░╚═╝╚═════╝░╚═════╝░░╚═════╝░╚═╝╚══════╝╚═════╝░╚═════╝░.................
+...............................................................................................
+...............................................................................................
+-->
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title> IHS Game Development Club </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <meta name="description" content="Welcome to the Game Development Club at Independence High School. Learn game development using Godot engine and C# programming language. Weekly meetings cover game engine concepts, practical exercises, and team projects. Join us to become a great game developer!">
+    <meta name="keywords" content="Game Development Club, Godot Engine, C# Programming, Game Developer, Independence High School, Game Development, Team Projects, Weekly Meetings, Practical Exercises">
+    <meta property="og:url" content="https://ihsgamedev.org/">
+    <meta property="og:title" content="Game Development Club at Independence High School">
+    <meta property="og:description" content="Official website of the Game Development Club at Independence High School. Learn game development, collaborate on projects, and explore the world of game design.">
+    <meta property="og:image" content="https://ihsgamedev.org/images/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta name="author" content="Bibhas Sharma">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <header class="">
+        <a href="#home" class="logo">Game Dev Club</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="#faq" onclick="toggleMenu();">FAQ</a></li>
+            <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+            <li><a href="getting-started.html" onclick="toggleMenu();"><span>Get Started</span></a></li>
+        </ul>
+    </header>
+
+
+    <section class="banner" id="home">
+        <div class="welcome">
+            <h2>Game Development Club</h2>
+            <img src="images/GameDevLogo.png" alt="Game Development Club Logo" class="mainGDLogo">
+            <h3 class="missionstatement">The official Game Development Club of Independence High School. The best start to becoming a great developer.</h3><br><br><br>
+            <p>Already a member?</p>
+            <a href="labs.html" class="button"> Switch to lab view </a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="heading"><br>
+            <h2>About Us</h2>
+        </div>
+        <div class="content1">
+            <div class="contentP imgsp">
+                <!--                <h3>What is this club?</h3>-->
+                <p>The club aims to teach game development quickly and build projects as a team. We will be using the Godot engine with the C# programming language (which almost perfectly resembles Java syntax). With weekly meetings during advisory, presentations about game engine concepts are given, and practical exercises (similar to labs in CS classes) are assigned to test your knowledge of that concept, which you should work on at home. There are 8 labs that take an hour to complete on average.<br><br>During the second semester, the club transitions to a team project structure, where during our meetings, we start planning and managing tasks to work on at home, resembling an actual development studio. All members are still free to join, and help will continue to be provided on the server, but members will be asked to do the labs if they wish to participate in the team project.</p>
+            </div>
+            <!--
+            <div class="imgsp">
+                img
+            </div>
+-->
+        </div>
+    </section>
+    <section class="general" id="faq">
+        <div class="heading white">
+            <h2><span>FAQ</span></h2>
+
+            <div class="warpper">
+                <input class="radio" id="one" name="group" type="radio" checked>
+                <input class="radio" id="two" name="group" type="radio">
+                <input class="radio" id="three" name="group" type="radio">
+                <input class="radio" id="four" name="group" type="radio">
+                <div class="tabs">
+                    <label class="tab" id="one-tab" for="one">What is a game engine?</label>
+                    <label class="tab" id="two-tab" for="two">What is Godot?</label>
+                    <label class="tab" id="three-tab" for="three">Club's programming requirements?</label>
+                    <label class="tab" id="four-tab" for="four">Unconventional Godot approach?</label>
+                </div>
+                <div class="panels">
+                    <div class="panel" id="one-panel">
+                        <div class="panel-title">What is a game engine?</div><br>
+                        <p>Game engines are development programs where common game mechanics are handled and optimized for you. If you’re familiar with a game framework (such as Pygame or Monogame), the software gives you access to useful audio and visual libraries but is otherwise largely script-based, with all modifications to the mechanics and appearance of a game requiring programming. Even then, advanced features are generally not handled for you.<br><br>
+                            With game engines (the most popular of which being Unity, Unreal, Gamemaker Studio, and Godot), there are several ways in which you can directly create and design the world. Several features can be set up without programming a single line of code. Complex behaviors necessary for advanced features like proper animations and collisions are built-in for you and highly optimized. <br><br>If you know how to properly utilize a game engine, the game will almost certainly have better gameplay, faster development, and smoother runtime.
+                        </p>
+                    </div>
+                    <div class="panel" id="two-panel">
+                        <div class="panel-title">What is Godot? Why are we using it?</div><br>
+                        <p>The technical answer: Godot is a highly flexible scene editor. The practical answer: Godot is a modern game engine that is far more streamlined and well-documented than anything else. What this means is that almost everything about the engine is explained in the official Godot Docs, and Godot avoids overlapping implementations of features.<br><br>
+                            Older engines like Unity and Unreal need to maintain legacy support and backwards compatibility while introducing new features, so their software can be bloated and challenging for beginners to navigate. The bonus part is that it’s open source, so Godot won’t take a dime if you publish a game with it.<br><br>
+                            This club is effectively a way to make your Godot learning experience much easier. While we do include references to documentation, all of the exercises we ask you to do have been custom-designed by Narein (club president) to fit the club experience.</p>
+                    </div>
+                    <div class="panel" id="three-panel">
+                        <div class="panel-title">What are the programming requirements for this club?</div><br>
+                        <p>There are no hard requirements, although any tiny bit of programming experience helps. That being said, programming will likely not be the most challenging part of game development for you.<br><br>
+                            Because Godot handles most of the complex behaviors, you will never need to program challenging algorithms or optimizations to the best of my knowledge. You really only need to understand basic Java/C# syntax, the default methods in the Godot editor (which we will cover), the concept of variables and variable types, creating new objects, calling and creating methods, and looking at the documentation when you get stuck.<br><br>
+                            Even people who find programming immensely challenging find these concepts to be quite simple, which is why I believe even someone with zero prior coding experience can succeed in the editor.</p>
+                    </div>
+                    <div class="panel" id="four-panel">
+                        <div class="panel-title">Is the club's Godot programming approach unconventional?</div><br>
+                        <p>The way we are configuring Godot is not very mainstream; the majority of tutorials you will find for the subject will utilize GDScript and the built-in script editor. The built-in script editor was developed more with GDscript in mind. GDscript is more of a Python-based language, and the built-in script editor does support autocomplete and code formatting for GDscript (but not for C#).<br><br>
+                            Why are we not using GDscript? Because C# conventions are more in line with what most programmers in Independence are used to, and I like how C# looks and feels to program anyway. C# is also more mainstream and compiles significantly faster (even if compilation of scripts is a negligible part of a game’s total performance usage). You’ll also find that other than storage or performance concerns, it’s better to use an external script editor anyway, as you get access to generally better debugging, refactoring, and code structuring.
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+        <!--
+        <div class="joe">
+            <div class="container">
+                <div class="box1">
+                    <div class="imgBx">
+                        <img src="images/android-chrome-256x256.png">
+                    </div>
+                    <div class="content">
+                        <h2>Game Jams</h2>
+                        <p>A game jam is a creative event where enthusiasts, artists, and developers come together to quickly invent and build an original video game.</p>
+                        <button class="custom-btn btn-11">Read More<div class="dot"></div></button>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="box2">
+                    <div class="imgBx">
+                        <img src="images/android-chrome-256x256.png">
+                    </div>
+                    <div class="content">
+                        <h2>Long-Term Group Projects</h2>
+                        <p>Long-term group projects are cooperative assignments that call for teamwork over a protracted period of time, typically several weeks or months.</p>
+                        <button class="custom-btn btn-11">Read More<div class="dot"></div></button>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="box3">
+                    <div class="imgBx">
+                        <img src="images/android-chrome-256x256.png">
+                    </div>
+                    <div class="content">
+                        <h2>Narein Vignesh</h2>
+                        <p>Narein Vignesh is the president of the Game Dev Club, driving a community of game development enthusiasts. His club dynamic space for collaborative learning and game development passion.</p>
+                        <button class="custom-btn btn-11">Read More<div class="dot"></div></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+    </section>
+    <section class="contactS hidden" id="contact">
+        <div class="heading">
+            <h2>Contact</h2>
+        </div>
+        <div class="content1">
+            <div class="contentP imgsp">
+                <p> Excited about the club? Find more details and our meeting schedule on our Discord server! Feel free to ask about game development or collaboration – we're open to new members and always ready to assist.</p>
+            </div>
+        </div>
+        <a href="https://bit.ly/428rsjZ" class="dbutton">
+            <img src="images/discordimage.png" alt="Discord Logo" width="75">
+        </a>
+
+
+    </section>
+    <section class="getStarted">
+        <div class="heading white">
+            <h2><span>And now, most importantly...</span></h2>
+            <div class="content1">
+                <div class="contentP imgsp">
+                    <div class="startedP">
+                        <p>Getting started with Godot! Click the button below to start.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <a href="getting-started.html" class="button"> Get started </a>
+    </section>
+    <script type="text/javascript">
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header')
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        function toggleMenu() {
+            var menuToggle = document.querySelector('.toggle');
+            var menu = document.querySelector('.menu');
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+
+    </script>
+
+</body>
+
+</html>

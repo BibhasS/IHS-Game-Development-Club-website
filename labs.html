@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title> GDC - Labs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <meta name="author" content="Bibhas Sharma">
+    <script defer src="app.js"></script>
+</head>
+<style>
+    html,
+    body {
+        background: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle, rgba(0, 31, 63, 1) 0%, rgba(0, 63, 127, 1) 25%, rgba(0, 95, 191, 1) 50%, rgba(0, 127, 255, 1) 75%, rgba(0, 159, 255, 1) 100%);
+
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topP {
+        margin-top: 35px;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    h1 {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 35px;
+        font-weight: 800;
+        line-height: 1.5em;
+        margin-top: 60px;
+        text-align: center;
+
+    }
+
+    /*
+    a {
+        color: #e33232;
+        text-decoration: underline;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    a:hover {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        transition: 0.25s;
+    }
+*/
+
+    .box {
+    display: flex;
+    width: 80%;
+    margin: 150px 70px;
+    justify-content: center;
+}
+
+
+    .box p {
+        text-align: center;
+        font-size: 50px;
+        width: 50%;
+        order: 1;
+        padding: 0 20px;
+        align-self: center;
+    }
+    
+    .getStartedButton{
+        color: #d71818;
+    }
+    .getStartedButton:visited{
+        color: #ffb555;
+    }
+    .getStartedButton:active{
+        color: #e28013;
+    }
+    .getStartedButton:hover{
+        transition: 1s;
+        color: #77480a;
+    }
+
+    .box:nth-child(2) {
+        transition-delay: 200ms;
+    }
+
+    .box:nth-child(3) {
+        transition-delay: 250ms;
+    }
+
+    .box:nth-child(4) {
+        transition-delay: 300ms;
+    }
+
+    .box:nth-child(5) {
+        transition-delay: 350ms;
+    }
+
+    .box:nth-child(6) {
+        transition-delay: 400ms;
+    }
+
+    .box:nth-child(7) {
+        transition-delay: 450ms;
+    }
+
+    .box:nth-child(8) {
+        transition-delay: 500ms;
+    }
+
+    .box:nth-child(9) {
+        transition-delay: 550ms;
+    }
+
+    .box:nth-child(even) .numberLabs,
+    .box:nth-child(odd) p {
+        order: 1;
+    }
+
+    .box:nth-child(even) p,
+    .box:nth-child(odd) .numberLabs {
+        order: 2;
+    }
+
+    .numberLabs a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 8px 12px;
+        color: #fff;
+        background-color: #840404;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .numberLabs a:hover {
+        color: #c0392b;
+        background-color: #b9acff;
+    }
+
+
+    @media (max-width: 950px) {
+        .box p {
+            font-size: 30px;
+        }
+
+        .topP {
+            font-size: 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .box:nth-child(even) .numberLabs,
+            .box:nth-child(odd) p {
+                order: 1;
+
+            }
+
+            .box:nth-child(even) p,
+            .box:nth-child(odd) .numberLabs {
+                order: 1;
+            }
+
+            .box p {
+                font-size: 22px;
+            }
+
+            .numberLabs a {
+                font-size: 36px;
+            }
+
+            .box {
+                margin: 150px 0px;
+            }
+        }
+
+</style>
+
+
+<body>
+    <header class="">
+        <a href="index.html" class="logo">Game Dev Club</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="https://ihsgamedev.org/#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="https://ihsgamedev.org/#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="https://ihsgamedev.org/#faq" onclick="toggleMenu();">FAQ</a></li>
+            <li><a href="https://ihsgamedev.org/#contact" onclick="toggleMenu();">Contact</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <h1>Labs</h1>
+        <p class="topP">
+            Here, you can access all the presentations and lab exercises assigned to official members. If you’ve never done a lab before, please go to <a href="getting-started.html" target="_blank" class="getStartedButton"><b>Get Started</b></a> and follow the steps to set up the Godot engine and the JetBrains IDE.
+        </p>
+
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-one.html">1</a></p>
+            <p>Godot Introduction</p>
+        </div>
+
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-two.html">2</a></p>
+            <p>Nodes and Physics</p>
+        </div>
+
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-three.html">3</a></p>
+            <p>Tweens and Cameras</p>
+        </div>
+
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-four.html">4</a></p>
+            <p>User Interface and Audio</p>
+        </div>
+
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-five.html">5</a></p>
+            <p>Saving games with JSON</p>
+        </div>
+
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-six.html">6</a></p>
+            <p>Animations</p>
+        </div>
+
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-seven.html">7</a></p>
+            <p>Tilemaps</p>
+        </div>
+
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-eight.html">8</a></p>
+            <p>Navigation</p>
+        </div>
+
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-nine.html">9</a></p>
+            <p>Particle Systems, Shaders, Lighting</p>
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <a href="https://www.dropbox.com/scl/fo/83b7q7nk2wfxcxgq4irpd/h?rlkey=kwijmnmvez3qqrl5pz37rt6iu" class="button" target="_blank"> Dropbox </a>
+        </div>
+
+        <p class="topP">Bonus Box!</p>
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-bonus-Cs-and-JetBrains-Rider.html">.</a></p>
+            <p>C# and JetBrains Rider</p>
+        </div>
+
+        <div class="box hidden">
+            <p class="numberLabs"><a href="lab-bonus-source-control.html">.</a></p>
+            <p>Source Control</p>
+        </div>
+    </section>
+
+
+    <script type="text/javascript">
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header')
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        function toggleMenu() {
+            var menuToggle = document.querySelector('.toggle');
+            var menu = document.querySelector('.menu');
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+
+    </script>
+
+</body>
+
+</html>

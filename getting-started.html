@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title> GDC - Get Started</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <meta name="description" content="Welcome to the Game Dev Club! Learn game development, set up Godot Engine, script editing with C#, and embark on your first lab. Join our Discord, follow step-by-step guides, and submit your work for grading. Start your game development journey with us!">
+    <meta name="keywords" content="Game Dev Club, game development, Godot Engine, C#, Discord, lab submissions, coding conventions, JetBrains Rider, VSCode, leaderboard, game development concepts, game code">
+    <meta name="author" content="Bibhas Sharma">
+
+</head>
+<style>
+    .bgimg-1,
+    .bgimg-2,
+    .bgimg-3 {
+        position: relative;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .bgimg-1 {
+        background-image: url("images/godotbackground.png");
+        min-height: 85vh;
+        background-color: black !important;
+    }
+
+    .bgimg-2,
+    .bgimg-3 {
+        background-image: url("images/godot5background.png");
+        min-height: 400px;
+        background-color: black !important;
+    }
+
+    .caption {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .caption span.border {
+        background-color: transparent;
+        color: #fff;
+        padding: 10px;
+        font-size: 70px;
+        letter-spacing: 2px;
+        border-radius: 5px;
+        box-shadow:
+            inset 3px 3px 6px 0px rgb(21 128 220), inset -3px -3px 6px 1px rgba(0, 0, 255, 0.5)
+    }
+
+
+    .caption p {
+        color: #fff;
+        font-size: 25px;
+        max-width: 630px;
+    }
+
+
+
+    h3 {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: #111;
+    }
+    
+
+#step1 p,#step2 p,#step3 p,#step4 p{
+     max-width: 1500px !important;
+    }
+
+
+    .section {
+        color: #333;
+        background-color: #fff;
+        text-align: center;
+        padding: 25px 20px;
+        justify-items: center;
+        text-align: -webkit-center;
+        text-align: -moz-center;
+    }
+
+    .section p {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+</style>
+
+<body>
+    <header class="">
+        <a href="index.html" class="logo">Game Dev Club</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="https://ihsgamedev.org/#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="https://ihsgamedev.org/#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="https://ihsgamedev.org/#faq" onclick="toggleMenu();">FAQ</a></li>
+            <li><a href="https://ihsgamedev.org/#contact" onclick="toggleMenu();">Contact</a></li>
+        </ul>
+    </header>
+
+
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">How do I get started?</span>
+            <!--            <a href="#step1" class="button"> Here! </a>-->
+        </div>
+    </div>
+
+    <div class="section" id="step1">
+        <img src="images/numbers/number1.png" alt="Step number 1" class="numbers">
+        <p>Join the <a href="https://bit.ly/428rsjZ" target="_blank" class="discordLink">Discord</a>, obviously. You’ll be able to communicate with our members right away so we can determine the fastest way to get you learning game development and involved with our projects.</p>
+        <a href="https://bit.ly/428rsjZ" class="dbutton">
+            <img src="images/discordimage.png" alt="Discord Logo" width="75">
+        </a>
+    </div>
+
+
+    <div class="bgimg-2">
+        <div class="caption">
+            <span class="border">Set up the Godot Engine</span>
+        </div>
+    </div>
+
+    <div class="section" id="step2">
+        <img src="images/numbers/number2.png" alt="Step number 2" class="numbers">
+        <p>Read the Intro to Godot <a href="https://docs.google.com/presentation/d/1SK0MCz6eUM-Sa-MBG9eXrG62JmJSNyOSM_BY1VZIHYc/edit#slide=id.p" target="_blank" class="googleSlidesLink">presentation</a>.It’s a basic guide for understanding the Godot IDE since it is a bit intimidating initially. It will walk you through how to set up Godot, which you want to do ASAP if you want to be an active member.
+        </p>
+    </div>
+
+    <div class="bgimg-3">
+        <div class="caption">
+            <span class="border">Set up the Script Editor</span>
+        </div>
+    </div>
+
+
+    <div class="section" id="step3">
+        <img src="images/numbers/number3.png" alt="Step number 3" class="numbers">
+        <p>You’ll find with Godot, you don’t have to code as much as in a framework or a CS course. However, you still need to code with the appropriate script editor in order to have the best workflow and avoid wasting time on errors that can easily be resolved with the proper software pointing them out. A good script editor should be able to provide autocomplete (method suggestions while typing), debugging, and generally have quality-of-life features. These features are NOT part of the built-in script editor in Godot, so do not use it.</p>
+        <p>We will use C#, a language with syntax almost perfectly resembling Java but with slightly different conventions. Read up on some useful C# conventions and the recommended IDE for this club, <a href="https://docs.google.com/presentation/d/16xJVtBWoy6pmolH2bxYpNQ8sFIq0z8gYlD40pLp3AdY/edit#slide=id.p" target="_blank" class="jetBrainsRiderLink">JetBrains Rider</a>.</p>
+        <p>(If, for some reason, there are performance or storage concerns with JetBrains Rider, you may use VSCode: How to set up <a href="https://docs.google.com/presentation/d/1cJeGbLo844TeqkArvpzsNyYUyb_Q9O29G5qrhaQEmxU/edit#slide=id.p" target="_blank" class="googleSlidesLink">VScode</a>?)</p>
+    </div>
+
+    <div class="bgimg-3">
+        <div class="caption">
+            <span class="border">Ready for your first lab?</span>
+        </div>
+    </div>
+
+    <div class="section" id="step4">
+        <img src="images/numbers/number4.png" alt="Step number 4" class="numbers">
+        <p>Time for your first lab! Do the lab at the end of the Godot Introduction slideshow, “Easy Artwork Printing.” This lab is designed to be significantly easier, but Godot is still a new editor to you, so don’t worry if it’s challenging. If you have any questions or technical issues, you may ask questions in #assistance or voice chat with others to resolve them.</p>
+        <p>Once you are ready to submit it, zip it up and put it into the #share-lab channel, naming it with your first name and the lab number (e.g., Narein Lab 1). You will eventually be graded in a private thread under #grading where you will receive a score. That score will then be used to assign you points in #leaderboard (Generally 100 points a lab, more with extra credit). Top performers on the leaderboard get bragging rights and potentially leadership roles in future semesters. You can also resubmit an infinite number of times based on the feedback you received from grading, getting full credit for any corrections you successfully make.</p>
+    </div>
+
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">Congratulations!</span><br><br><br>
+            <p>Now, keep doing labs. Keep learning concepts. Great game development is in your reach!</p>
+            <a href="labs.html" class="button"> Labs </a>
+        </div>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('header')
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+    function toggleMenu() {
+        var menuToggle = document.querySelector('.toggle');
+        var menu = document.querySelector('.menu');
+        menuToggle.classList.toggle('active');
+        menu.classList.toggle('active');
+    }
+
+</script>
+
+</html>
