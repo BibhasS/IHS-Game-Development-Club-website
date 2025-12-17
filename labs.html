@@ -2,293 +2,421 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/site.webmanifest">
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <title> GDC - Labs</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="normalize.css">
-    <meta name="author" content="Bibhas Sharma">
-    <script defer src="app.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>GDC - Labs</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="normalize.css">
+  <meta name="author" content="Bibhas Sharma">
+
+  <style>
+    /* Page-only styling */
+    .labs-wrap {
+      padding-top: 120px;
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.35)),
+        url("images/godotbackground.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .labs-shell {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0 24px 90px;
+    }
+
+    .labs-hero {
+      text-align: center;
+      padding: 40px 14px 12px;
+    }
+
+    .labs-hero h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(26px, 3vw, 46px);
+      color: #fff;
+      line-height: 1.35;
+      margin: 0 0 14px;
+      text-shadow: 0 0 14px rgba(33, 247, 255, 0.25);
+    }
+
+    .labs-hero p {
+      color: #cfeaff;
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 950px;
+      margin: 0 auto 18px;
+    }
+
+    .labs-cta {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .labs-mini {
+      text-decoration: none;
+      font-weight: 800;
+      padding: 12px 14px;
+      border: 2px solid rgba(33, 247, 255, 0.25);
+      color: #fff;
+      background: rgba(0, 0, 0, 0.55);
+      display: inline-block;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 11px;
+    }
+
+    .labs-mini:hover {
+      border-color: rgba(255, 43, 214, 0.55);
+      transform: translateY(-1px);
+    }
+
+    .labs-section {
+      margin-top: 22px;
+      scroll-margin-top: 130px;
+    }
+
+    .labs-section-title {
+      margin: 18px 0 14px;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 13px;
+      line-height: 1.6;
+      display: inline-block;
+      padding: 10px 12px;
+      background: rgba(0, 0, 0, 0.65);
+      border: 2px solid rgba(255, 43, 214, 0.25);
+    }
+
+    .labs-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .lab-card {
+      grid-column: span 12;
+      background: rgba(0, 0, 0, 0.74);
+      border: 3px solid rgba(33, 247, 255, 0.22);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      padding: 18px 18px 16px;
+      transition: transform 0.12s ease;
+    }
+
+    .lab-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 43, 214, 0.35);
+    }
+
+    .lab-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .lab-badge {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 11px;
+      color: #fff;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 2px solid rgba(33, 247, 255, 0.18);
+      white-space: nowrap;
+    }
+
+    .lab-status {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 10px;
+      color: #cfeaff;
+      opacity: 0.9;
+      padding: 8px 10px;
+      border: 2px dashed rgba(255, 43, 214, 0.25);
+      background: rgba(0, 0, 0, 0.30);
+      white-space: nowrap;
+    }
+
+    .lab-title {
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 8px 0 8px;
+    }
+
+    .lab-desc {
+      color: #cfeaff;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0 0 12px;
+      max-width: 900px;
+    }
+
+    .lab-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .lab-open {
+      text-decoration: none;
+      font-weight: 800;
+      padding: 12px 14px;
+      border: 2px solid rgba(33, 247, 255, 0.25);
+      color: #fff;
+      background: rgba(0, 0, 0, 0.55);
+      display: inline-block;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 11px;
+    }
+
+    .lab-open:hover {
+      border-color: rgba(255, 43, 214, 0.55);
+      transform: translateY(-1px);
+    }
+
+    .labs-footer {
+      margin-top: 26px;
+      text-align: center;
+    }
+
+    @media (min-width: 760px) {
+      .lab-card {
+        grid-column: span 6;
+      }
+    }
+
+    @media (min-width: 1050px) {
+      .lab-card {
+        grid-column: span 4;
+      }
+    }
+  </style>
 </head>
-<style>
-    html,
-    body {
-        background: #000;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-        background: radial-gradient(circle, rgba(0, 31, 63, 1) 0%, rgba(0, 63, 127, 1) 25%, rgba(0, 95, 191, 1) 50%, rgba(0, 127, 255, 1) 75%, rgba(0, 159, 255, 1) 100%);
-
-    }
-
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .topP {
-        margin-top: 35px;
-        font-size: 25px;
-        text-align: center;
-    }
-
-    h1 {
-        font-family: 'Press Start 2P', cursive;
-        font-size: 35px;
-        font-weight: 800;
-        line-height: 1.5em;
-        margin-top: 60px;
-        text-align: center;
-
-    }
-
-    /*
-    a {
-        color: #e33232;
-        text-decoration: underline;
-        font-weight: bold;
-        text-align: center;
-        cursor: pointer;
-    }
-
-    a:hover {
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        transition: 0.25s;
-    }
-*/
-
-    .box {
-    display: flex;
-    width: 80%;
-    margin: 150px 70px;
-    justify-content: center;
-}
-
-
-    .box p {
-        text-align: center;
-        font-size: 50px;
-        width: 50%;
-        order: 1;
-        padding: 0 20px;
-        align-self: center;
-    }
-    
-    .getStartedButton{
-        color: #d71818;
-    }
-    .getStartedButton:visited{
-        color: #ffb555;
-    }
-    .getStartedButton:active{
-        color: #e28013;
-    }
-    .getStartedButton:hover{
-        transition: 1s;
-        color: #77480a;
-    }
-
-    .box:nth-child(2) {
-        transition-delay: 200ms;
-    }
-
-    .box:nth-child(3) {
-        transition-delay: 250ms;
-    }
-
-    .box:nth-child(4) {
-        transition-delay: 300ms;
-    }
-
-    .box:nth-child(5) {
-        transition-delay: 350ms;
-    }
-
-    .box:nth-child(6) {
-        transition-delay: 400ms;
-    }
-
-    .box:nth-child(7) {
-        transition-delay: 450ms;
-    }
-
-    .box:nth-child(8) {
-        transition-delay: 500ms;
-    }
-
-    .box:nth-child(9) {
-        transition-delay: 550ms;
-    }
-
-    .box:nth-child(even) .numberLabs,
-    .box:nth-child(odd) p {
-        order: 1;
-    }
-
-    .box:nth-child(even) p,
-    .box:nth-child(odd) .numberLabs {
-        order: 2;
-    }
-
-    .numberLabs a {
-        display: inline-block;
-        text-decoration: none;
-        padding: 8px 12px;
-        color: #fff;
-        background-color: #840404;
-        font-weight: bold;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    .numberLabs a:hover {
-        color: #c0392b;
-        background-color: #b9acff;
-    }
-
-
-    @media (max-width: 950px) {
-        .box p {
-            font-size: 30px;
-        }
-
-        .topP {
-            font-size: 20px;
-        }
-
-        @media (max-width: 700px) {
-
-            .box:nth-child(even) .numberLabs,
-            .box:nth-child(odd) p {
-                order: 1;
-
-            }
-
-            .box:nth-child(even) p,
-            .box:nth-child(odd) .numberLabs {
-                order: 1;
-            }
-
-            .box p {
-                font-size: 22px;
-            }
-
-            .numberLabs a {
-                font-size: 36px;
-            }
-
-            .box {
-                margin: 150px 0px;
-            }
-        }
-
-</style>
-
 
 <body>
-    <header class="">
-        <a href="index.html" class="logo">Game Dev Club</a>
-        <div class="toggle" onclick="toggleMenu();"></div>
-        <ul class="menu">
-            <li><a href="https://ihsgamedev.org/#home" onclick="toggleMenu();">Home</a></li>
-            <li><a href="https://ihsgamedev.org/#about" onclick="toggleMenu();">About</a></li>
-            <li><a href="https://ihsgamedev.org/#faq" onclick="toggleMenu();">FAQ</a></li>
-            <li><a href="https://ihsgamedev.org/#contact" onclick="toggleMenu();">Contact</a></li>
-        </ul>
-    </header>
+  <header class="">
+    <a href="index.html" class="logo">Game Dev Club</a>
+    <div class="toggle" onclick="toggleMenu();"></div>
+    <ul class="menu">
+      <li><a href="https://ihsgamedev.org/#home" onclick="toggleMenu();">Home</a></li>
+      <li><a href="https://ihsgamedev.org/#about" onclick="toggleMenu();">About</a></li>
+      <li><a href="https://ihsgamedev.org/#faq" onclick="toggleMenu();">FAQ</a></li>
+      <li><a href="https://ihsgamedev.org/#contact" onclick="toggleMenu();">Contact</a></li>
+    </ul>
+  </header>
 
-    <section>
-        <h1>Labs</h1>
-        <p class="topP">
-            Here, you can access all the presentations and lab exercises assigned to official members. If you’ve never done a lab before, please go to <a href="getting-started.html" target="_blank" class="getStartedButton"><b>Get Started</b></a> and follow the steps to set up the Godot engine and the JetBrains IDE.
+  <main class="labs-wrap" id="top">
+    <div class="labs-shell">
+      <section class="labs-hero">
+        <h1>LABS</h1>
+        <p>
+          This is your lab hub. Start from Lab 1 and work upward.
+          If you’ve never done a lab before, do <strong>Get Started</strong> first so your Godot + C# setup is ready.
         </p>
 
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-one.html">1</a></p>
-            <p>Godot Introduction</p>
+        <div class="labs-cta">
+          <a class="labs-mini" href="getting-started.html">Get Started</a>
+          <a class="labs-mini" href="#official">Official Labs</a>
+          <a class="labs-mini" href="#bonus">Bonus</a>
+          <a class="labs-mini" target="_blank"
+            href="https://www.dropbox.com/scl/fo/83b7q7nk2wfxcxgq4irpd/h?rlkey=kwijmnmvez3qqrl5pz37rt6iu">
+            Dropbox
+          </a>
         </div>
+      </section>
 
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-two.html">2</a></p>
-            <p>Nodes and Physics</p>
+      <!-- OFFICIAL LABS -->
+      <section class="labs-section" id="official">
+        <div class="labs-section-title">OFFICIAL LABS</div>
+
+        <div class="labs-grid">
+          <!-- Lab 1 -->
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">LAB 1</div>
+              <div class="lab-status">START HERE</div>
+            </div>
+            <h2 class="lab-title">Godot Introduction</h2>
+            <p class="lab-desc">Learn the editor basics + complete your first simple project.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-one.html">Open Lab</a>
+            </div>
+          </article>
+
+          <!-- Lab 2 -->
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">LAB 2</div>
+              <div class="lab-status">CORE</div>
+            </div>
+            <h2 class="lab-title">Nodes and Physics</h2>
+            <p class="lab-desc">Understand scenes/nodes and add physics-based movement.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-two.html">Open Lab</a>
+            </div>
+          </article>
+
+          <!-- Lab 3 -->
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">LAB 3</div>
+              <div class="lab-status">CORE</div>
+            </div>
+            <h2 class="lab-title">Tweens and Cameras</h2>
+            <p class="lab-desc">Make motion smooth and control what the player sees.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-three.html">Open Lab</a>
+            </div>
+          </article>
+
+          <!-- Lab 4 -->
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">LAB 4</div>
+              <div class="lab-status">CORE</div>
+            </div>
+            <h2 class="lab-title">User Interface and Audio</h2>
+            <p class="lab-desc">Build UI elements and add sound effects/music.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-four.html">Open Lab</a>
+            </div>
+          </article>
+
+          <!-- Lab 5 -->
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">LAB 5</div>
+              <div class="lab-status">SAVE DATA</div>
+            </div>
+            <h2 class="lab-title">Saving Games with JSON</h2>
+            <p class="lab-desc">Save and load progress using JSON files.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-five.html">Open Lab</a>
+            </div>
+          </article>
+
+          <!-- Lab 6 -->
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">LAB 6</div>
+              <div class="lab-status">VISUAL</div>
+            </div>
+            <h2 class="lab-title">Animations</h2>
+            <p class="lab-desc">Animate characters/objects and trigger animation states.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-six.html">Open Lab</a>
+            </div>
+          </article>
+
+          <!-- Lab 7 -->
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">LAB 7</div>
+              <div class="lab-status">WORLD</div>
+            </div>
+            <h2 class="lab-title">Tilemaps</h2>
+            <p class="lab-desc">Build game levels fast with tiles and tile-based collisions.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-seven.html">Open Lab</a>
+            </div>
+          </article>
+
+          <!-- Lab 8 -->
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">LAB 8</div>
+              <div class="lab-status">AI PATHING</div>
+            </div>
+            <h2 class="lab-title">Navigation</h2>
+            <p class="lab-desc">Make enemies/NPCs move intelligently around obstacles.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-eight.html">Open Lab</a>
+            </div>
+          </article>
+
+          <!-- Lab 9 -->
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">LAB 9</div>
+              <div class="lab-status">ADVANCED</div>
+            </div>
+            <h2 class="lab-title">Particles, Shaders, Lighting</h2>
+            <p class="lab-desc">Add VFX and improve atmosphere with lighting/shaders.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-nine.html">Open Lab</a>
+            </div>
+          </article>
         </div>
+      </section>
 
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-three.html">3</a></p>
-            <p>Tweens and Cameras</p>
+      <!-- BONUS -->
+      <section class="labs-section" id="bonus">
+        <div class="labs-section-title">BONUS LABS</div>
+
+        <div class="labs-grid">
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">BONUS</div>
+              <div class="lab-status">SETUP</div>
+            </div>
+            <h2 class="lab-title">C# and JetBrains Rider</h2>
+            <p class="lab-desc">Extra help for Rider, C# conventions, and quality-of-life tips.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-bonus-Cs-and-JetBrains-Rider.html">Open Bonus</a>
+            </div>
+          </article>
+
+          <article class="lab-card">
+            <div class="lab-top">
+              <div class="lab-badge">BONUS</div>
+              <div class="lab-status">GIT</div>
+            </div>
+            <h2 class="lab-title">Source Control</h2>
+            <p class="lab-desc">Learn Git basics so you stop losing progress and can collaborate.</p>
+            <div class="lab-actions">
+              <a class="lab-open" href="lab-bonus-source-control.html">Open Bonus</a>
+            </div>
+          </article>
         </div>
+      </section>
 
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-four.html">4</a></p>
-            <p>User Interface and Audio</p>
-        </div>
+      <div class="labs-footer">
+        <a class="labs-mini" href="#top">Back to Top</a>
+      </div>
+    </div>
+  </main>
 
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-five.html">5</a></p>
-            <p>Saving games with JSON</p>
-        </div>
+  <script type="text/javascript">
+    window.addEventListener('scroll', function () {
+      var header = document.querySelector('header')
+      header.classList.toggle('sticky', window.scrollY > 0);
+    });
 
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-six.html">6</a></p>
-            <p>Animations</p>
-        </div>
-
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-seven.html">7</a></p>
-            <p>Tilemaps</p>
-        </div>
-
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-eight.html">8</a></p>
-            <p>Navigation</p>
-        </div>
-
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-nine.html">9</a></p>
-            <p>Particle Systems, Shaders, Lighting</p>
-        </div>
-        <br>
-        <div style="text-align: center;">
-            <a href="https://www.dropbox.com/scl/fo/83b7q7nk2wfxcxgq4irpd/h?rlkey=kwijmnmvez3qqrl5pz37rt6iu" class="button" target="_blank"> Dropbox </a>
-        </div>
-
-        <p class="topP">Bonus Box!</p>
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-bonus-Cs-and-JetBrains-Rider.html">.</a></p>
-            <p>C# and JetBrains Rider</p>
-        </div>
-
-        <div class="box hidden">
-            <p class="numberLabs"><a href="lab-bonus-source-control.html">.</a></p>
-            <p>Source Control</p>
-        </div>
-    </section>
-
-
-    <script type="text/javascript">
-        window.addEventListener('scroll', function() {
-            var header = document.querySelector('header')
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
-
-        function toggleMenu() {
-            var menuToggle = document.querySelector('.toggle');
-            var menu = document.querySelector('.menu');
-            menuToggle.classList.toggle('active');
-            menu.classList.toggle('active');
-        }
-
-    </script>
+    function toggleMenu() {
+      var menuToggle = document.querySelector('.toggle');
+      var menu = document.querySelector('.menu');
+      menuToggle.classList.toggle('active');
+      menu.classList.toggle('active');
+    }
+  </script>
 
 </body>
 
