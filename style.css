@@ -1069,3 +1069,245 @@
             font-size: 15px;
         }
     }
+
+
+
+
+/* =========================
+   RETRO / GAME THEME OVERRIDES
+   Paste at bottom of CSS
+   ========================= */
+
+/* --- Theme tokens --- */
+:root{
+  --bg0:#05060a;
+  --bg1:#0a1020;
+  --ink:#e8f7ff;
+  --muted:#b7d6ff;
+  --neon:#21f7ff;
+  --neon2:#ff2bd6;
+  --gold:#fbd34d;
+  --panel:#0b0f1a;
+  --panel2:#0f1a2a;
+  --px: 3px;             /* pixel border thickness */
+  --radius: 0px;         /* keep sharp edges */
+}
+
+/* Make headings + UI use pixel font, body stays readable */
+body{
+  background: radial-gradient(1200px 800px at 20% 0%, rgba(33,247,255,.12), transparent 60%),
+              radial-gradient(1000px 700px at 80% 20%, rgba(255,43,214,.10), transparent 55%),
+              linear-gradient(180deg, var(--bg0), var(--bg1) 55%, #06070a);
+  color: var(--ink);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,.logo, header ul li a, .tab, .panel-title, .button, .dbutton{
+  font-family: 'Press Start 2P', cursive !important;
+  letter-spacing: 1px;
+}
+
+/* --- CRT overlay + scanlines --- */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events:none;
+  z-index: 9999;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.03) 0px,
+      rgba(255,255,255,.03) 1px,
+      rgba(0,0,0,.00) 2px,
+      rgba(0,0,0,.00) 4px
+    );
+  mix-blend-mode: overlay;
+  opacity: .35;
+}
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events:none;
+  z-index: 9998;
+  background:
+    radial-gradient(1200px 800px at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.45)),
+    linear-gradient(90deg, rgba(255,0,0,.03), rgba(0,255,255,.03));
+  opacity: .35;
+}
+
+/* Respect people who dislike motion */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+  body::before, body::after{ opacity: .18; }
+}
+
+/* --- Header: HUD bar --- */
+header{
+  background: rgba(0,0,0,.75) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: var(--px) solid rgba(33,247,255,.35);
+  box-shadow: 0 0 0 2px rgba(255,43,214,.18), 0 18px 40px rgba(0,0,0,.55) !important;
+}
+header.sticky{
+  border-bottom-color: rgba(33,247,255,.6);
+}
+.logo{
+  text-shadow: 0 0 8px rgba(33,247,255,.55), 0 0 16px rgba(255,43,214,.35);
+}
+
+/* Nav links become “menu chips” */
+header ul li a{
+  padding: 12px 12px;
+  border: 2px solid rgba(33,247,255,.25);
+  background: linear-gradient(180deg, rgba(15,26,42,.65), rgba(6,10,18,.65));
+  box-shadow: 0 0 0 2px rgba(0,0,0,.35);
+  border-radius: var(--radius);
+}
+header ul li a:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,43,214,.55);
+  box-shadow: 0 0 0 2px rgba(255,43,214,.15), 0 0 18px rgba(33,247,255,.25);
+  color: var(--neon) !important;
+}
+
+/* --- Banner: game title screen --- */
+.banner{
+  background:
+    radial-gradient(800px 400px at 50% 10%, rgba(33,247,255,.22), transparent 60%),
+    radial-gradient(900px 600px at 70% 40%, rgba(255,43,214,.18), transparent 55%),
+    linear-gradient(180deg, #020413, #06113a, #0b2a6b, #0e4aa4, #8bb6ff) !important;
+  position: relative;
+  overflow: hidden;
+}
+/* subtle “stars” */
+.banner::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.35) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,.25) 0 1px, transparent 2px),
+    radial-gradient(circle at 80% 60%, rgba(255,255,255,.22) 0 1px, transparent 2px),
+    radial-gradient(circle at 35% 70%, rgba(255,255,255,.18) 0 1px, transparent 2px);
+  background-size: 420px 260px;
+  opacity: .45;
+  pointer-events:none;
+  animation: starsFloat 10s linear infinite;
+}
+@keyframes starsFloat{
+  from{ transform: translateY(0px); }
+  to{ transform: translateY(26px); }
+}
+
+/* Title + mission statement styling */
+.banner h2{
+  text-shadow: 0 0 10px rgba(33,247,255,.6), 0 0 20px rgba(255,43,214,.35);
+}
+.missionstatement{
+  font-family: 'Montserrat', sans-serif !important; /* keep readable */
+  text-shadow: 0 2px 0 rgba(0,0,0,.45);
+}
+
+/* --- Pixel panel styling for sections --- */
+.about, .contactS, .getStarted{
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(220,240,255,.92)) !important;
+  position: relative;
+}
+.general{
+  background: linear-gradient(180deg, #070a12, #0b1222) !important;
+}
+
+/* Headings: “pixel label” */
+.heading h2{
+  font-family: 'Press Start 2P', cursive !important;
+  font-size: clamp(22px, 3.2vw, 44px);
+  color: #06113a !important;
+  text-shadow: 3px 3px 0 rgba(33,247,255,.35), -2px -2px 0 rgba(255,43,214,.25);
+  padding: 14px 16px;
+  display: inline-block;
+  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(240,250,255,.85));
+  border: var(--px) solid rgba(6,17,58,.9);
+  box-shadow: 0 0 0 3px rgba(33,247,255,.25), 0 12px 0 rgba(0,0,0,.15);
+}
+
+/* --- Buttons: chunky arcade buttons --- */
+.button, .dbutton{
+  border-radius: var(--radius) !important;
+  border: var(--px) solid rgba(33,247,255,.65) !important;
+  background: linear-gradient(180deg, rgba(15,26,42,.95), rgba(6,10,18,.95)) !important;
+  box-shadow:
+    0 10px 0 rgba(0,0,0,.35),
+    0 0 0 3px rgba(255,43,214,.22),
+    0 0 20px rgba(33,247,255,.18) !important;
+  text-shadow: 0 0 10px rgba(33,247,255,.35);
+  filter: none !important;
+}
+.button:hover, .dbutton:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,43,214,.85) !important;
+  box-shadow:
+    0 12px 0 rgba(0,0,0,.30),
+    0 0 0 3px rgba(33,247,255,.25),
+    0 0 26px rgba(255,43,214,.25) !important;
+}
+/* press-down effect */
+.button:active, .dbutton:active{
+  transform: translateY(6px);
+  box-shadow:
+    0 4px 0 rgba(0,0,0,.35),
+    0 0 0 3px rgba(255,43,214,.22),
+    0 0 18px rgba(33,247,255,.15) !important;
+}
+
+/* --- FAQ tabs: pixel capsules -> pixel cards --- */
+.tab{
+  border-radius: var(--radius) !important;
+  border: var(--px) solid rgba(33,247,255,.35);
+  background: linear-gradient(180deg, rgba(11,15,26,.95), rgba(7,10,18,.95));
+  box-shadow: 0 8px 0 rgba(0,0,0,.45), 0 0 0 2px rgba(255,43,214,.15);
+}
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab{
+  border-color: rgba(255,43,214,.75) !important;
+  color: var(--neon) !important;
+  text-shadow: 0 0 10px rgba(33,247,255,.45);
+}
+
+/* Panels become “dialog box” */
+.panels{
+  background: linear-gradient(180deg, rgba(10,16,32,.85), rgba(6,10,18,.85)) !important;
+  border: var(--px) solid rgba(33,247,255,.35);
+  box-shadow:
+    0 0 0 3px rgba(0,0,0,.55),
+    0 0 22px rgba(33,247,255,.12);
+}
+.panel p{
+  color: var(--muted);
+}
+
+/* --- Images: slightly “pixel” look on the logo --- */
+.mainGDLogo{
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 10px rgba(33,247,255,.35));
+}
+
+/* --- Utility: pixel border for any card-like boxes you re-enable later --- */
+.box1, .box2, .box3{
+  border: var(--px) solid rgba(33,247,255,.25);
+  border-radius: var(--radius);
+}
+
+/* Mobile menu: make it feel like an in-game pause menu */
+@media (max-width:1000px){
+  .menu{
+    background: linear-gradient(180deg, rgba(0,0,0,.92), rgba(8,10,18,.92)) !important;
+    border-left: var(--px) solid rgba(33,247,255,.35);
+  }
+  header ul li a{
+    display: inline-block;
+    width: min(520px, 100%);
+  }
+}
