@@ -35,7 +35,7 @@
     .gs-shell {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 0 24px 90px;
     }
 
     .gs-hero {
@@ -45,7 +45,7 @@
 
     .gs-hero h1 {
       font-family: 'Press Start 2P', cursive;
-      font-size: clamp(24px, 3vw, 46px);
+      font-size: clamp(26px, 3vw, 48px);
       color: #fff;
       margin-bottom: 16px;
       text-shadow: 0 0 14px rgba(33, 247, 255, 0.25);
@@ -55,9 +55,9 @@
     .gs-hero p {
       color: #cfeaff;
       font-size: 18px;
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto 18px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .gs-pillbar {
@@ -86,12 +86,12 @@
 
     /* QUEST HUD */
     .gs-hud {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto 26px;
       background: rgba(0, 0, 0, 0.72);
       border: 3px solid rgba(33, 247, 255, 0.22);
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-      padding: 14px 14px 12px;
+      padding: 16px 16px 14px;
       text-align: left;
     }
 
@@ -121,7 +121,7 @@
 
     .gs-bar {
       width: 100%;
-      height: 14px;
+      height: 16px;
       background: rgba(255, 255, 255, 0.10);
       border: 2px solid rgba(33, 247, 255, 0.22);
       position: relative;
@@ -135,19 +135,28 @@
       background: linear-gradient(90deg, rgba(33, 247, 255, 0.65), rgba(255, 43, 214, 0.55));
     }
 
+    /* BIG SECTIONS */
+    .gs-section {
+      margin-top: 26px;
+      padding-top: 4px;
+      scroll-margin-top: 130px; /* IMPORTANT: prevents sticky header hiding the title */
+    }
+
+    /* one step per row, big spacing */
     .gs-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
+      gap: 22px;
       margin-top: 18px;
     }
 
+    /* BIGGER CARD */
     .gs-card {
       grid-column: span 12;
-      background: rgba(0, 0, 0, 0.72);
-      border: 3px solid rgba(33, 247, 255, 0.22);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-      padding: 18px 18px 16px;
+      background: rgba(0, 0, 0, 0.76);
+      border: 3px solid rgba(33, 247, 255, 0.24);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.50);
+      padding: 26px 26px 22px;
     }
 
     .gs-card header {
@@ -164,84 +173,88 @@
     .gs-topline {
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 12px;
+      gap: 16px;
+      margin-bottom: 14px;
     }
 
     .gs-num {
-      width: 52px;
-      height: 52px;
-      flex: 0 0 52px;
+      width: 64px;
+      height: 64px;
+      flex: 0 0 64px;
       image-rendering: pixelated;
     }
 
     .gs-title {
       color: #fff;
       font-family: 'Press Start 2P', cursive;
-      font-size: 14px;
-      line-height: 1.45;
+      font-size: 16px;
+      line-height: 1.5;
       margin: 0;
     }
 
     .gs-tag {
       display: inline-block;
       margin-top: 8px;
-      font-size: 12px;
+      font-size: 13px;
       color: #cfeaff;
       opacity: 0.95;
     }
 
     .gs-body p {
       color: #cfeaff;
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 10px 0;
+      font-size: 17px;
+      line-height: 1.7;
+      margin: 12px 0;
+      max-width: 900px;
     }
 
     .gs-body ul {
       color: #cfeaff;
       margin: 10px 0 0 18px;
-      line-height: 1.6;
-      font-size: 16px;
+      line-height: 1.7;
+      font-size: 17px;
+      max-width: 900px;
     }
 
     /* QUEST CHECK + EXPAND */
     .gs-checkline {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin: 10px 0 2px;
-      padding: 10px 10px;
-      background: rgba(255, 255, 255, 0.06);
+      gap: 12px;
+      margin: 14px 0 6px;
+      padding: 14px 14px;
+      background: rgba(255, 255, 255, 0.07);
       border: 2px solid rgba(33, 247, 255, 0.18);
+      max-width: 900px;
     }
 
     .gs-checkline input {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       accent-color: #21f7ff;
     }
 
     .gs-checkline label {
       color: #fff;
       font-family: 'Press Start 2P', cursive;
-      font-size: 11px;
-      line-height: 1.5;
+      font-size: 12px;
+      line-height: 1.55;
       cursor: pointer;
     }
 
     details.gs-details {
-      margin-top: 12px;
+      margin-top: 14px;
       border: 2px dashed rgba(255, 43, 214, 0.25);
-      padding: 10px 12px;
-      background: rgba(0, 0, 0, 0.40);
+      padding: 14px 14px;
+      background: rgba(0, 0, 0, 0.42);
+      max-width: 900px;
     }
 
     details.gs-details summary {
       cursor: pointer;
       list-style: none;
       font-family: 'Press Start 2P', cursive;
-      font-size: 11px;
+      font-size: 12px;
       color: #fff;
     }
 
@@ -250,28 +263,28 @@
     }
 
     .gs-details .hint {
-      margin-top: 10px;
+      margin-top: 12px;
       color: #cfeaff;
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 16px;
+      line-height: 1.75;
     }
 
     .gs-code {
-      margin-top: 10px;
+      margin-top: 12px;
       background: rgba(0, 0, 0, 0.55);
       border: 2px solid rgba(33, 247, 255, 0.18);
-      padding: 12px;
+      padding: 14px;
       overflow: auto;
       color: #cfeaff;
       font-size: 14px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .gs-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 14px;
+      margin-top: 16px;
       align-items: center;
     }
 
@@ -297,33 +310,28 @@
     }
 
     .gs-finish {
-      margin-top: 20px;
-      background: rgba(0, 0, 0, 0.75);
+      margin-top: 28px;
+      background: rgba(0, 0, 0, 0.78);
       border: 3px solid rgba(255, 43, 214, 0.22);
-      padding: 22px 18px;
+      padding: 26px 18px;
       text-align: center;
+      scroll-margin-top: 130px;
     }
 
     .gs-finish h2 {
       font-family: 'Press Start 2P', cursive;
       color: #fff;
       font-size: 16px;
-      line-height: 1.5;
+      line-height: 1.6;
       margin-bottom: 12px;
     }
 
     .gs-finish p {
       color: #cfeaff;
-      font-size: 16px;
-      line-height: 1.6;
-      max-width: 860px;
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 900px;
       margin: 0 auto 16px;
-    }
-
-    @media (min-width: 860px) {
-      .gs-card {
-        grid-column: span 6;
-      }
     }
   </style>
 </head>
@@ -345,8 +353,8 @@
       <section class="gs-hero">
         <h1>GET STARTED</h1>
         <p>
-          This page is your <strong>Quest Log</strong>. Check off each step and your progress saves automatically.
-          If you get stuck, ask in Discord (#assistance).
+          This page is your <strong>Quest Log</strong>. Each step is a big section (no cramped boxes),
+          and your checkmarks save automatically.
         </p>
 
         <div class="gs-pillbar">
@@ -370,220 +378,223 @@
         <a href="#step1" class="button">Start the Quest</a>
       </section>
 
-      <section class="gs-grid">
-        <!-- STEP 1 -->
-        <article class="gs-card" id="step1">
-          <header>
-            <div class="gs-topline">
-              <img src="images/numbers/number1.png" alt="Step 1" class="gs-num">
-              <div>
-                <h2 class="gs-title">Join the Discord</h2>
-                <span class="gs-tag">Reward: announcements + help + lab submissions</span>
-              </div>
-            </div>
-          </header>
-
-          <div class="gs-body">
-            <div class="gs-checkline">
-              <input type="checkbox" id="q1" data-xp="100">
-              <label for="q1">I joined the Discord server</label>
-            </div>
-
-            <details class="gs-details">
-              <summary>▶ Read the steps here (no extra sites)</summary>
-              <div class="hint">
-                <ul>
-                  <li>Click the invite button below.</li>
-                  <li>Pick a username you’ll recognize.</li>
-                  <li>Find <strong>#assistance</strong> and say: “Hi, I just joined!”</li>
-                  <li>Pin the server so you don’t lose it.</li>
-                </ul>
-                <p><strong>If Discord won’t open:</strong> try copy/paste the invite link into your browser or install the Discord app.</p>
-              </div>
-            </details>
-
-            <div class="gs-actions">
-              <a href="https://bit.ly/428rsjZ" target="_blank" class="dbutton" style="margin:0;">
-                <img src="images/discordimage.png" alt="Discord Logo" width="75">
-              </a>
-              <a href="https://bit.ly/428rsjZ" target="_blank" class="gs-mini">Open Discord (optional)</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- STEP 2 -->
-        <article class="gs-card" id="step2">
-          <header>
-            <div class="gs-topline">
-              <img src="images/numbers/number2.png" alt="Step 2" class="gs-num">
-              <div>
-                <h2 class="gs-title">Install Godot + Learn the Editor</h2>
-                <span class="gs-tag">Reward: you can open projects + follow labs</span>
-              </div>
-            </div>
-          </header>
-
-          <div class="gs-body">
-            <div class="gs-checkline">
-              <input type="checkbox" id="q2" data-xp="100">
-              <label for="q2">Godot is installed and opens a new project</label>
-            </div>
-
-            <details class="gs-details">
-              <summary>▶ Do it on this page (fast version)</summary>
-              <div class="hint">
-                <p><strong>Goal:</strong> install Godot and create one empty project.</p>
-                <ul>
-                  <li>Download Godot (latest stable) from the official site.</li>
-                  <li>Install / unzip it (depends on your OS).</li>
-                  <li>Open Godot → click <strong>New Project</strong>.</li>
-                  <li>Name it: <strong>GDC_TestProject</strong>.</li>
-                  <li>Choose a folder you can find later (Desktop or Documents is fine).</li>
-                  <li>Click <strong>Create &amp; Edit</strong>.</li>
-                </ul>
-
-                <p><strong>Sanity check:</strong> you should see a blank editor with panels (Scene/FileSystem/Inspector).</p>
-                <div class="gs-code">
-                  If it crashes or won't open:
-                  - restart computer
-                  - redownload the stable build
-                  - ask in Discord #assistance with your OS + screenshot
+      <!-- STEP 1 SECTION -->
+      <section class="gs-section" id="step1">
+        <div class="gs-grid">
+          <article class="gs-card">
+            <header>
+              <div class="gs-topline">
+                <img src="images/numbers/number1.png" alt="Step 1" class="gs-num">
+                <div>
+                  <h2 class="gs-title">Join the Discord</h2>
+                  <span class="gs-tag">Reward: announcements + help + lab submissions</span>
                 </div>
               </div>
-            </details>
+            </header>
 
-            <div class="gs-actions">
-              <a class="gs-mini" target="_blank" href="https://godotengine.org/download">
-                Godot Download (optional)
-              </a>
-              <a class="gs-mini" target="_blank"
-                href="https://docs.google.com/presentation/d/1SK0MCz6eUM-Sa-MBG9eXrG62JmJSNyOSM_BY1VZIHYc/edit#slide=id.p">
-                Slides (optional)
-              </a>
-            </div>
-          </div>
-        </article>
+            <div class="gs-body">
+              <div class="gs-checkline">
+                <input type="checkbox" id="q1" data-xp="100">
+                <label for="q1">I joined the Discord server</label>
+              </div>
 
-        <!-- STEP 3 -->
-        <article class="gs-card" id="step3">
-          <header>
-            <div class="gs-topline">
-              <img src="images/numbers/number3.png" alt="Step 3" class="gs-num">
-              <div>
-                <h2 class="gs-title">Set up a Script Editor (C#)</h2>
-                <span class="gs-tag">Reward: autocomplete + debugging + less pain</span>
+              <details class="gs-details">
+                <summary>▶ Read the steps here (no extra sites)</summary>
+                <div class="hint">
+                  <ul>
+                    <li>Click the invite button below.</li>
+                    <li>Pick a username you’ll recognize.</li>
+                    <li>Find <strong>#assistance</strong> and say: “Hi, I just joined!”</li>
+                    <li>Pin the server so you don’t lose it.</li>
+                  </ul>
+                  <p><strong>If Discord won’t open:</strong> copy/paste the invite link into your browser or install the Discord app.</p>
+                </div>
+              </details>
+
+              <div class="gs-actions">
+                <a href="https://bit.ly/428rsjZ" target="_blank" class="dbutton" style="margin:0;">
+                  <img src="images/discordimage.png" alt="Discord Logo" width="75">
+                </a>
+                <a href="https://bit.ly/428rsjZ" target="_blank" class="gs-mini">Open Discord (optional)</a>
               </div>
             </div>
-          </header>
+          </article>
+        </div>
+      </section>
 
-          <div class="gs-body">
-            <div class="gs-checkline">
-              <input type="checkbox" id="q3" data-xp="100">
-              <label for="q3">My C# editor works (I can open a script from Godot)</label>
-            </div>
-
-            <details class="gs-details">
-              <summary>▶ Pick ONE path (recommended + backup)</summary>
-              <div class="hint">
-                <p><strong>Recommended:</strong> JetBrains Rider (best experience for C#).</p>
-                <ul>
-                  <li>Install Rider.</li>
-                  <li>Open Rider once so it finishes setup.</li>
-                  <li>In Godot: Editor Settings → Dotnet → External Editor → choose Rider (or “Auto”).</li>
-                  <li>Open any C# script from Godot → Rider should launch.</li>
-                </ul>
-
-                <p><strong>Backup option:</strong> VS Code (if your laptop is struggling).</p>
-                <ul>
-                  <li>Install VS Code + C# extension.</li>
-                  <li>Set Godot external editor to VS Code.</li>
-                  <li>Open a script and confirm autocomplete works.</li>
-                </ul>
-
-                <div class="gs-code">
-                  Quick test:
-                  - Create script: Player.cs
-                  - Type: Console.WriteLine("hello");
-                  If it suggests Console/WriteLine -> you're good.
+      <!-- STEP 2 SECTION -->
+      <section class="gs-section" id="step2">
+        <div class="gs-grid">
+          <article class="gs-card">
+            <header>
+              <div class="gs-topline">
+                <img src="images/numbers/number2.png" alt="Step 2" class="gs-num">
+                <div>
+                  <h2 class="gs-title">Install Godot + Learn the Editor</h2>
+                  <span class="gs-tag">Reward: you can open projects + follow labs</span>
                 </div>
               </div>
-            </details>
+            </header>
 
-            <div class="gs-actions">
-              <a class="gs-mini" target="_blank"
-                href="https://www.jetbrains.com/rider/">
-                Rider Site (optional)
-              </a>
-
-              <a class="gs-mini" target="_blank"
-                href="https://code.visualstudio.com/">
-                VS Code Site (optional)
-              </a>
-
-              <a class="gs-mini" target="_blank"
-                href="https://docs.google.com/presentation/d/16xJVtBWoy6pmolH2bxYpNQ8sFIq0z8gYlD40pLp3AdY/edit#slide=id.p">
-                Rider Slides (optional)
-              </a>
-
-              <a class="gs-mini" target="_blank"
-                href="https://docs.google.com/presentation/d/1cJeGbLo844TeqkArvpzsNyYUyb_Q9O29G5qrhaQEmxU/edit#slide=id.p">
-                VS Code Slides (optional)
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- STEP 4 -->
-        <article class="gs-card" id="step4">
-          <header>
-            <div class="gs-topline">
-              <img src="images/numbers/number4.png" alt="Step 4" class="gs-num">
-              <div>
-                <h2 class="gs-title">Do Lab 1 + Submit It</h2>
-                <span class="gs-tag">Reward: your first graded submission</span>
+            <div class="gs-body">
+              <div class="gs-checkline">
+                <input type="checkbox" id="q2" data-xp="100">
+                <label for="q2">Godot is installed and opens a new project</label>
               </div>
-            </div>
-          </header>
 
-          <div class="gs-body">
-            <div class="gs-checkline">
-              <input type="checkbox" id="q4" data-xp="100">
-              <label for="q4">Lab 1 is submitted in #share-lab</label>
-            </div>
+              <details class="gs-details">
+                <summary>▶ Do it on this page (fast version)</summary>
+                <div class="hint">
+                  <p><strong>Goal:</strong> install Godot and create one empty project.</p>
+                  <ul>
+                    <li>Download Godot (latest stable) from the official site.</li>
+                    <li>Install / unzip it (depends on your OS).</li>
+                    <li>Open Godot → click <strong>New Project</strong>.</li>
+                    <li>Name it: <strong>GDC_TestProject</strong>.</li>
+                    <li>Choose a folder you can find later (Desktop or Documents is fine).</li>
+                    <li>Click <strong>Create &amp; Edit</strong>.</li>
+                  </ul>
 
-            <details class="gs-details">
-              <summary>▶ Submission checklist (copy/paste friendly)</summary>
-              <div class="hint">
-                <p><strong>Goal:</strong> finish Lab 1 (“Easy Artwork Printing”) and submit correctly.</p>
-                <ul>
-                  <li>Finish the lab steps.</li>
-                  <li>Close Godot (avoids weird zip issues).</li>
-                  <li>Zip the <strong>entire project folder</strong> (not just one file).</li>
-                  <li>Post in <strong>#share-lab</strong> as: <em>FirstName Lab 1</em></li>
-                  <li>Wait for a private grading thread under <strong>#grading</strong>.</li>
-                  <li>If feedback says “fix X”, update and resubmit (unlimited).</li>
-                </ul>
-
-                <div class="gs-code">
-                  Example message:
-                  "Bibhas Lab 1"
-                  (attach zip)
+                  <p><strong>Sanity check:</strong> you should see panels like Scene / FileSystem / Inspector.</p>
+                  <div class="gs-code">
+                    If it won't open:
+                    - restart computer
+                    - redownload stable build
+                    - ask in Discord #assistance with your OS + screenshot
+                  </div>
                 </div>
+              </details>
 
-                <p><strong>Common mistakes:</strong></p>
-                <ul>
-                  <li>Uploading only screenshots instead of the zip</li>
-                  <li>Zipping the wrong folder level</li>
-                  <li>Naming it something random so graders can’t find it</li>
-                </ul>
+              <div class="gs-actions">
+                <a class="gs-mini" target="_blank" href="https://godotengine.org/download">Godot Download (optional)</a>
+                <a class="gs-mini" target="_blank"
+                  href="https://docs.google.com/presentation/d/1SK0MCz6eUM-Sa-MBG9eXrG62JmJSNyOSM_BY1VZIHYc/edit#slide=id.p">
+                  Slides (optional)
+                </a>
               </div>
-            </details>
-
-            <div class="gs-actions">
-              <a href="https://bit.ly/428rsjZ" target="_blank" class="gs-mini">Ask for Help (optional)</a>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
+      </section>
+
+      <!-- STEP 3 SECTION -->
+      <section class="gs-section" id="step3">
+        <div class="gs-grid">
+          <article class="gs-card">
+            <header>
+              <div class="gs-topline">
+                <img src="images/numbers/number3.png" alt="Step 3" class="gs-num">
+                <div>
+                  <h2 class="gs-title">Set up a Script Editor (C#)</h2>
+                  <span class="gs-tag">Reward: autocomplete + debugging + less pain</span>
+                </div>
+              </div>
+            </header>
+
+            <div class="gs-body">
+              <div class="gs-checkline">
+                <input type="checkbox" id="q3" data-xp="100">
+                <label for="q3">My C# editor works (I can open a script from Godot)</label>
+              </div>
+
+              <details class="gs-details">
+                <summary>▶ Pick ONE path (recommended + backup)</summary>
+                <div class="hint">
+                  <p><strong>Recommended:</strong> JetBrains Rider.</p>
+                  <ul>
+                    <li>Install Rider.</li>
+                    <li>Open Rider once so it finishes setup.</li>
+                    <li>In Godot: Editor Settings → Dotnet → External Editor → choose Rider (or Auto).</li>
+                    <li>Open any C# script → Rider should launch.</li>
+                  </ul>
+
+                  <p><strong>Backup:</strong> VS Code.</p>
+                  <ul>
+                    <li>Install VS Code + C# extension.</li>
+                    <li>Set Godot external editor to VS Code.</li>
+                    <li>Open a script and confirm autocomplete works.</li>
+                  </ul>
+
+                  <div class="gs-code">
+                    Quick test:
+                    - Create script: Player.cs
+                    - Type: Console.WriteLine("hello");
+                    If it suggests Console/WriteLine -> you're good.
+                  </div>
+                </div>
+              </details>
+
+              <div class="gs-actions">
+                <a class="gs-mini" target="_blank" href="https://www.jetbrains.com/rider/">Rider Site (optional)</a>
+                <a class="gs-mini" target="_blank" href="https://code.visualstudio.com/">VS Code Site (optional)</a>
+                <a class="gs-mini" target="_blank"
+                  href="https://docs.google.com/presentation/d/16xJVtBWoy6pmolH2bxYpNQ8sFIq0z8gYlD40pLp3AdY/edit#slide=id.p">
+                  Rider Slides (optional)
+                </a>
+                <a class="gs-mini" target="_blank"
+                  href="https://docs.google.com/presentation/d/1cJeGbLo844TeqkArvpzsNyYUyb_Q9O29G5qrhaQEmxU/edit#slide=id.p">
+                  VS Code Slides (optional)
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- STEP 4 SECTION -->
+      <section class="gs-section" id="step4">
+        <div class="gs-grid">
+          <article class="gs-card">
+            <header>
+              <div class="gs-topline">
+                <img src="images/numbers/number4.png" alt="Step 4" class="gs-num">
+                <div>
+                  <h2 class="gs-title">Do Lab 1 + Submit It</h2>
+                  <span class="gs-tag">Reward: your first graded submission</span>
+                </div>
+              </div>
+            </header>
+
+            <div class="gs-body">
+              <div class="gs-checkline">
+                <input type="checkbox" id="q4" data-xp="100">
+                <label for="q4">Lab 1 is submitted in #share-lab</label>
+              </div>
+
+              <details class="gs-details">
+                <summary>▶ Submission checklist (copy/paste friendly)</summary>
+                <div class="hint">
+                  <p><strong>Goal:</strong> finish Lab 1 (“Easy Artwork Printing”) and submit correctly.</p>
+                  <ul>
+                    <li>Finish the lab steps.</li>
+                    <li>Close Godot (avoids weird zip issues).</li>
+                    <li>Zip the <strong>entire project folder</strong> (not just one file).</li>
+                    <li>Post in <strong>#share-lab</strong> as: <em>FirstName Lab 1</em></li>
+                    <li>Wait for a private thread under <strong>#grading</strong>.</li>
+                    <li>Fix feedback + resubmit (unlimited).</li>
+                  </ul>
+
+                  <div class="gs-code">
+                    Example message:
+                    "Bibhas Lab 1"
+                    (attach zip)
+                  </div>
+
+                  <p><strong>Common mistakes:</strong></p>
+                  <ul>
+                    <li>Uploading only screenshots instead of the zip</li>
+                    <li>Zipping the wrong folder level</li>
+                    <li>Naming it something random so graders can’t find it</li>
+                  </ul>
+                </div>
+              </details>
+
+              <div class="gs-actions">
+                <a href="https://bit.ly/428rsjZ" target="_blank" class="gs-mini">Ask for Help (optional)</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="gs-finish" id="finish">
@@ -598,6 +609,7 @@
           <a href="#top" class="gs-mini">Back to Top</a>
         </div>
       </section>
+
     </div>
   </main>
 
@@ -616,7 +628,7 @@
     }
 
     // Quest progress (saved)
-    const KEY = "gdc_quest_progress_v1";
+    const KEY = "gdc_quest_progress_v2";
     const checks = Array.from(document.querySelectorAll('input[type="checkbox"][data-xp]'));
     const xpText = document.getElementById("xpText");
     const barFill = document.getElementById("barFill");
