@@ -2,399 +2,669 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/site.webmanifest">
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 
-    <title>GDC - Get Started</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="normalize.css">
+  <title>GDC - Get Started</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="normalize.css">
 
-    <meta name="description" content="Welcome to the Game Dev Club! Join Discord, install Godot, set up a C# script editor, and submit your first lab.">
-    <meta name="keywords" content="Game Dev Club, Godot Engine, C#, Discord, JetBrains Rider, VSCode, lab submissions">
-    <meta name="author" content="Bibhas Sharma">
-</head>
+  <meta name="description" content="Welcome to the Game Dev Club! Join Discord, install Godot, set up a C# script editor, and submit your first lab.">
+  <meta name="keywords" content="Game Dev Club, Godot Engine, C#, Discord, JetBrains Rider, VSCode, lab submissions">
+  <meta name="author" content="Bibhas Sharma">
 
-<style>
+  <style>
     /* Page-only layout (does not touch your global CSS file) */
     .gs-wrap {
-        padding-top: 120px;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15)), url("images/godotbackground.png");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        min-height: 100vh;
+      padding-top: 120px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15)), url("images/godotbackground.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
     }
 
     .gs-shell {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 24px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
     }
 
     .gs-hero {
-        text-align: center;
-        padding: 40px 18px 18px;
+      text-align: center;
+      padding: 40px 18px 18px;
     }
 
     .gs-hero h1 {
-        font-family: 'Press Start 2P', cursive;
-        font-size: clamp(24px, 3vw, 46px);
-        color: #fff;
-        margin-bottom: 16px;
-        text-shadow: 0 0 14px rgba(33, 247, 255, 0.25);
-        line-height: 1.3;
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(24px, 3vw, 46px);
+      color: #fff;
+      margin-bottom: 16px;
+      text-shadow: 0 0 14px rgba(33, 247, 255, 0.25);
+      line-height: 1.3;
     }
 
     .gs-hero p {
-        color: #cfeaff;
-        font-size: 18px;
-        max-width: 820px;
-        margin: 0 auto 18px;
-        line-height: 1.5;
+      color: #cfeaff;
+      font-size: 18px;
+      max-width: 860px;
+      margin: 0 auto 18px;
+      line-height: 1.6;
     }
 
     .gs-pillbar {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        margin: 18px auto 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 18px auto 18px;
     }
 
     .gs-pillbar a {
-        text-decoration: none;
-        font-family: 'Press Start 2P', cursive;
-        font-size: 11px;
-        padding: 12px 14px;
-        color: #fff;
-        background: rgba(0, 0, 0, 0.65);
-        border: 2px solid rgba(33, 247, 255, 0.25);
-        display: inline-block;
+      text-decoration: none;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 11px;
+      padding: 12px 14px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.65);
+      border: 2px solid rgba(33, 247, 255, 0.25);
+      display: inline-block;
     }
 
     .gs-pillbar a:hover {
-        border-color: rgba(255, 43, 214, 0.55);
-        transform: translateY(-1px);
+      border-color: rgba(255, 43, 214, 0.55);
+      transform: translateY(-1px);
+    }
+
+    /* QUEST HUD */
+    .gs-hud {
+      max-width: 860px;
+      margin: 0 auto 26px;
+      background: rgba(0, 0, 0, 0.72);
+      border: 3px solid rgba(33, 247, 255, 0.22);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      padding: 14px 14px 12px;
+      text-align: left;
+    }
+
+    .gs-hud-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .gs-hud-title {
+      font-family: 'Press Start 2P', cursive;
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .gs-xp {
+      font-family: 'Press Start 2P', cursive;
+      color: #cfeaff;
+      font-size: 11px;
+      opacity: 0.95;
+    }
+
+    .gs-bar {
+      width: 100%;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 2px solid rgba(33, 247, 255, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gs-bar>span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, rgba(33, 247, 255, 0.65), rgba(255, 43, 214, 0.55));
     }
 
     .gs-grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 16px;
-        margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 18px;
     }
 
     .gs-card {
-        grid-column: span 12;
-        background: rgba(0, 0, 0, 0.72);
-        border: 3px solid rgba(33, 247, 255, 0.22);
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-        padding: 18px 18px 16px;
+      grid-column: span 12;
+      background: rgba(0, 0, 0, 0.72);
+      border: 3px solid rgba(33, 247, 255, 0.22);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      padding: 18px 18px 16px;
     }
 
     .gs-card header {
-        position: static;
-        padding: 0;
-        border: none;
-        box-shadow: none;
-        background: transparent;
-        animation: none;
-        backdrop-filter: none;
-        display: block;
+      position: static;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      animation: none;
+      backdrop-filter: none;
+      display: block;
     }
 
     .gs-topline {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
     }
 
     .gs-num {
-        width: 52px;
-        height: 52px;
-        flex: 0 0 52px;
-        image-rendering: pixelated;
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
+      image-rendering: pixelated;
     }
 
     .gs-title {
-        color: #fff;
-        font-family: 'Press Start 2P', cursive;
-        font-size: 14px;
-        line-height: 1.45;
-        margin: 0;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 14px;
+      line-height: 1.45;
+      margin: 0;
     }
 
     .gs-tag {
-        display: inline-block;
-        margin-top: 8px;
-        font-size: 12px;
-        color: #cfeaff;
-        opacity: 0.95;
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #cfeaff;
+      opacity: 0.95;
     }
 
     .gs-body p {
-        color: #cfeaff;
-        font-size: 16px;
-        line-height: 1.55;
-        margin: 10px 0;
+      color: #cfeaff;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 10px 0;
     }
 
     .gs-body ul {
-        color: #cfeaff;
-        margin: 10px 0 0 18px;
-        line-height: 1.55;
-        font-size: 16px;
+      color: #cfeaff;
+      margin: 10px 0 0 18px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* QUEST CHECK + EXPAND */
+    .gs-checkline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0 2px;
+      padding: 10px 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 2px solid rgba(33, 247, 255, 0.18);
+    }
+
+    .gs-checkline input {
+      width: 20px;
+      height: 20px;
+      accent-color: #21f7ff;
+    }
+
+    .gs-checkline label {
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 11px;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    details.gs-details {
+      margin-top: 12px;
+      border: 2px dashed rgba(255, 43, 214, 0.25);
+      padding: 10px 12px;
+      background: rgba(0, 0, 0, 0.40);
+    }
+
+    details.gs-details summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 11px;
+      color: #fff;
+    }
+
+    details.gs-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .gs-details .hint {
+      margin-top: 10px;
+      color: #cfeaff;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .gs-code {
+      margin-top: 10px;
+      background: rgba(0, 0, 0, 0.55);
+      border: 2px solid rgba(33, 247, 255, 0.18);
+      padding: 12px;
+      overflow: auto;
+      color: #cfeaff;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     .gs-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 14px;
-        align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+      align-items: center;
     }
 
     .gs-mini {
-        text-decoration: none;
-        font-weight: 800;
-        padding: 12px 14px;
-        border: 2px solid rgba(33, 247, 255, 0.25);
-        color: #fff;
-        background: rgba(0, 0, 0, 0.55);
-        display: inline-block;
-        font-family: 'Press Start 2P', cursive;
-        font-size: 11px;
+      text-decoration: none;
+      font-weight: 800;
+      padding: 12px 14px;
+      border: 2px solid rgba(33, 247, 255, 0.25);
+      color: #fff;
+      background: rgba(0, 0, 0, 0.55);
+      display: inline-block;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 11px;
     }
 
     .gs-mini:hover {
-        border-color: rgba(255, 43, 214, 0.55);
-        transform: translateY(-1px);
+      border-color: rgba(255, 43, 214, 0.55);
+      transform: translateY(-1px);
+    }
+
+    .gs-danger {
+      border-color: rgba(255, 100, 100, 0.25);
     }
 
     .gs-finish {
-        margin-top: 20px;
-        background: rgba(0, 0, 0, 0.75);
-        border: 3px solid rgba(255, 43, 214, 0.22);
-        padding: 22px 18px;
-        text-align: center;
+      margin-top: 20px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 3px solid rgba(255, 43, 214, 0.22);
+      padding: 22px 18px;
+      text-align: center;
     }
 
     .gs-finish h2 {
-        font-family: 'Press Start 2P', cursive;
-        color: #fff;
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 12px;
+      font-family: 'Press Start 2P', cursive;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 12px;
     }
 
     .gs-finish p {
-        color: #cfeaff;
-        font-size: 16px;
-        line-height: 1.55;
-        max-width: 860px;
-        margin: 0 auto 16px;
+      color: #cfeaff;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 860px;
+      margin: 0 auto 16px;
     }
 
     @media (min-width: 860px) {
-        .gs-card {
-            grid-column: span 6;
-        }
+      .gs-card {
+        grid-column: span 6;
+      }
     }
-</style>
+  </style>
+</head>
 
 <body>
-    <header class="">
-        <a href="index.html" class="logo">Game Dev Club</a>
-        <div class="toggle" onclick="toggleMenu();"></div>
-        <ul class="menu">
-            <li><a href="https://ihsgamedev.org/#home" onclick="toggleMenu();">Home</a></li>
-            <li><a href="https://ihsgamedev.org/#about" onclick="toggleMenu();">About</a></li>
-            <li><a href="https://ihsgamedev.org/#faq" onclick="toggleMenu();">FAQ</a></li>
-            <li><a href="https://ihsgamedev.org/#contact" onclick="toggleMenu();">Contact</a></li>
-        </ul>
-    </header>
+  <header class="">
+    <a href="index.html" class="logo">Game Dev Club</a>
+    <div class="toggle" onclick="toggleMenu();"></div>
+    <ul class="menu">
+      <li><a href="https://ihsgamedev.org/#home" onclick="toggleMenu();">Home</a></li>
+      <li><a href="https://ihsgamedev.org/#about" onclick="toggleMenu();">About</a></li>
+      <li><a href="https://ihsgamedev.org/#faq" onclick="toggleMenu();">FAQ</a></li>
+      <li><a href="https://ihsgamedev.org/#contact" onclick="toggleMenu();">Contact</a></li>
+    </ul>
+  </header>
 
-    <main class="gs-wrap" id="top">
-        <div class="gs-shell">
-            <section class="gs-hero">
-                <h1>GET STARTED</h1>
-                <p>
-                    Think of this page like a quest log. Do these 4 steps, and you’ll be fully set up to start labs and get graded.
-                    If you get stuck anywhere, ask in Discord (#assistance).
-                </p>
+  <main class="gs-wrap" id="top">
+    <div class="gs-shell">
+      <section class="gs-hero">
+        <h1>GET STARTED</h1>
+        <p>
+          This page is your <strong>Quest Log</strong>. Check off each step and your progress saves automatically.
+          If you get stuck, ask in Discord (#assistance).
+        </p>
 
-                <div class="gs-pillbar">
-                    <a href="#step1">Step 1</a>
-                    <a href="#step2">Step 2</a>
-                    <a href="#step3">Step 3</a>
-                    <a href="#step4">Step 4</a>
-                    <a href="#finish">Finish</a>
-                </div>
-
-                <a href="#step1" class="button">Start the Quest</a>
-            </section>
-
-            <section class="gs-grid">
-                <!-- STEP 1 -->
-                <article class="gs-card" id="step1">
-                    <header>
-                        <div class="gs-topline">
-                            <img src="images/numbers/number1.png" alt="Step 1" class="gs-num">
-                            <div>
-                                <h2 class="gs-title">Join the Discord</h2>
-                                <span class="gs-tag">Goal: get help + announcements + submit labs</span>
-                            </div>
-                        </div>
-                    </header>
-
-                    <div class="gs-body">
-                        <p>Discord is where everything happens: questions, updates, grading threads, and the leaderboard.</p>
-                        <ul>
-                            <li>Join the server</li>
-                            <li>Say hi (so we know you’re in)</li>
-                            <li>Ask for help anytime</li>
-                        </ul>
-
-                        <div class="gs-actions">
-                            <a href="https://bit.ly/428rsjZ" target="_blank" class="dbutton" style="margin:0;">
-                                <img src="images/discordimage.png" alt="Discord Logo" width="75">
-                            </a>
-                            <a href="https://bit.ly/428rsjZ" target="_blank" class="gs-mini">Open Discord</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- STEP 2 -->
-                <article class="gs-card" id="step2">
-                    <header>
-                        <div class="gs-topline">
-                            <img src="images/numbers/number2.png" alt="Step 2" class="gs-num">
-                            <div>
-                                <h2 class="gs-title">Install + Learn the Godot Editor</h2>
-                                <span class="gs-tag">Goal: understand the basics fast</span>
-                            </div>
-                        </div>
-                    </header>
-
-                    <div class="gs-body">
-                        <p>This slideshow is the quickest way to understand the Godot IDE without getting overwhelmed.</p>
-                        <ul>
-                            <li>Open the “Intro to Godot” slideshow</li>
-                            <li>Follow the setup steps</li>
-                            <li>Skim once, then re-check while installing</li>
-                        </ul>
-
-                        <div class="gs-actions">
-                            <a class="gs-mini googleSlidesLink" target="_blank"
-                                href="https://docs.google.com/presentation/d/1SK0MCz6eUM-Sa-MBG9eXrG62JmJSNyOSM_BY1VZIHYc/edit#slide=id.p">
-                                Intro to Godot Slides
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- STEP 3 -->
-                <article class="gs-card" id="step3">
-                    <header>
-                        <div class="gs-topline">
-                            <img src="images/numbers/number3.png" alt="Step 3" class="gs-num">
-                            <div>
-                                <h2 class="gs-title">Set up a Script Editor (C#)</h2>
-                                <span class="gs-tag">Goal: autocomplete + debugging + fewer errors</span>
-                            </div>
-                        </div>
-                    </header>
-
-                    <div class="gs-body">
-                        <p>Do <strong>not</strong> use Godot’s built-in script editor for C#. Use an IDE so it catches mistakes instantly.</p>
-                        <ul>
-                            <li><strong>Recommended:</strong> JetBrains Rider</li>
-                            <li><strong>Backup option:</strong> VS Code (if storage/performance is a problem)</li>
-                        </ul>
-
-                        <div class="gs-actions">
-                            <a class="gs-mini jetBrainsRiderLink" target="_blank"
-                                href="https://docs.google.com/presentation/d/16xJVtBWoy6pmolH2bxYpNQ8sFIq0z8gYlD40pLp3AdY/edit#slide=id.p">
-                                Rider Setup + Conventions
-                            </a>
-
-                            <a class="gs-mini googleSlidesLink" target="_blank"
-                                href="https://docs.google.com/presentation/d/1cJeGbLo844TeqkArvpzsNyYUyb_Q9O29G5qrhaQEmxU/edit#slide=id.p">
-                                VS Code Setup (optional)
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- STEP 4 -->
-                <article class="gs-card" id="step4">
-                    <header>
-                        <div class="gs-topline">
-                            <img src="images/numbers/number4.png" alt="Step 4" class="gs-num">
-                            <div>
-                                <h2 class="gs-title">Do Lab 1 + Submit It</h2>
-                                <span class="gs-tag">Goal: your first graded submission</span>
-                            </div>
-                        </div>
-                    </header>
-
-                    <div class="gs-body">
-                        <p>Your first lab is at the end of the Intro to Godot slideshow: <strong>“Easy Artwork Printing.”</strong></p>
-
-                        <ul>
-                            <li>Complete the lab</li>
-                            <li>Zip the project folder</li>
-                            <li>Post it in <strong>#share-lab</strong> as: <em>FirstName Lab 1</em></li>
-                        </ul>
-
-                        <p style="margin-top:12px;">
-                            You’ll get graded in a private thread under <strong>#grading</strong>.
-                            You can resubmit as many times as you want based on feedback.
-                        </p>
-
-                        <div class="gs-actions">
-                            <a href="https://bit.ly/428rsjZ" target="_blank" class="gs-mini">Ask for Help in Discord</a>
-                        </div>
-                    </div>
-                </article>
-            </section>
-
-            <section class="gs-finish" id="finish">
-                <h2>✅ QUEST COMPLETE</h2>
-                <p>
-                    Once you’ve done Steps 1–4, you’re officially set up. From here, keep doing labs, keep learning concepts,
-                    and keep improving. Great game development is in your reach.
-                </p>
-                <a href="labs.html" class="button">Go to Labs</a>
-                <div style="margin-top:14px;">
-                    <a href="#top" class="gs-mini">Back to Top</a>
-                </div>
-            </section>
+        <div class="gs-pillbar">
+          <a href="#step1">Step 1</a>
+          <a href="#step2">Step 2</a>
+          <a href="#step3">Step 3</a>
+          <a href="#step4">Step 4</a>
+          <a href="#finish">Finish</a>
         </div>
-    </main>
 
-    <script type="text/javascript">
-        window.addEventListener('scroll', function () {
-            var header = document.querySelector('header')
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
+        <div class="gs-hud" aria-label="Quest progress">
+          <div class="gs-hud-top">
+            <p class="gs-hud-title">QUEST PROGRESS</p>
+            <div class="gs-xp" id="xpText">XP: 0 / 400</div>
+          </div>
+          <div class="gs-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span id="barFill"></span>
+          </div>
+        </div>
 
-        function toggleMenu() {
-            var menuToggle = document.querySelector('.toggle');
-            var menu = document.querySelector('.menu');
-            menuToggle.classList.toggle('active');
-            menu.classList.toggle('active');
-        }
-    </script>
+        <a href="#step1" class="button">Start the Quest</a>
+      </section>
+
+      <section class="gs-grid">
+        <!-- STEP 1 -->
+        <article class="gs-card" id="step1">
+          <header>
+            <div class="gs-topline">
+              <img src="images/numbers/number1.png" alt="Step 1" class="gs-num">
+              <div>
+                <h2 class="gs-title">Join the Discord</h2>
+                <span class="gs-tag">Reward: announcements + help + lab submissions</span>
+              </div>
+            </div>
+          </header>
+
+          <div class="gs-body">
+            <div class="gs-checkline">
+              <input type="checkbox" id="q1" data-xp="100">
+              <label for="q1">I joined the Discord server</label>
+            </div>
+
+            <details class="gs-details">
+              <summary>▶ Read the steps here (no extra sites)</summary>
+              <div class="hint">
+                <ul>
+                  <li>Click the invite button below.</li>
+                  <li>Pick a username you’ll recognize.</li>
+                  <li>Find <strong>#assistance</strong> and say: “Hi, I just joined!”</li>
+                  <li>Pin the server so you don’t lose it.</li>
+                </ul>
+                <p><strong>If Discord won’t open:</strong> try copy/paste the invite link into your browser or install the Discord app.</p>
+              </div>
+            </details>
+
+            <div class="gs-actions">
+              <a href="https://bit.ly/428rsjZ" target="_blank" class="dbutton" style="margin:0;">
+                <img src="images/discordimage.png" alt="Discord Logo" width="75">
+              </a>
+              <a href="https://bit.ly/428rsjZ" target="_blank" class="gs-mini">Open Discord (optional)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- STEP 2 -->
+        <article class="gs-card" id="step2">
+          <header>
+            <div class="gs-topline">
+              <img src="images/numbers/number2.png" alt="Step 2" class="gs-num">
+              <div>
+                <h2 class="gs-title">Install Godot + Learn the Editor</h2>
+                <span class="gs-tag">Reward: you can open projects + follow labs</span>
+              </div>
+            </div>
+          </header>
+
+          <div class="gs-body">
+            <div class="gs-checkline">
+              <input type="checkbox" id="q2" data-xp="100">
+              <label for="q2">Godot is installed and opens a new project</label>
+            </div>
+
+            <details class="gs-details">
+              <summary>▶ Do it on this page (fast version)</summary>
+              <div class="hint">
+                <p><strong>Goal:</strong> install Godot and create one empty project.</p>
+                <ul>
+                  <li>Download Godot (latest stable) from the official site.</li>
+                  <li>Install / unzip it (depends on your OS).</li>
+                  <li>Open Godot → click <strong>New Project</strong>.</li>
+                  <li>Name it: <strong>GDC_TestProject</strong>.</li>
+                  <li>Choose a folder you can find later (Desktop or Documents is fine).</li>
+                  <li>Click <strong>Create &amp; Edit</strong>.</li>
+                </ul>
+
+                <p><strong>Sanity check:</strong> you should see a blank editor with panels (Scene/FileSystem/Inspector).</p>
+                <div class="gs-code">
+                  If it crashes or won't open:
+                  - restart computer
+                  - redownload the stable build
+                  - ask in Discord #assistance with your OS + screenshot
+                </div>
+              </div>
+            </details>
+
+            <div class="gs-actions">
+              <a class="gs-mini" target="_blank" href="https://godotengine.org/download">
+                Godot Download (optional)
+              </a>
+              <a class="gs-mini" target="_blank"
+                href="https://docs.google.com/presentation/d/1SK0MCz6eUM-Sa-MBG9eXrG62JmJSNyOSM_BY1VZIHYc/edit#slide=id.p">
+                Slides (optional)
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- STEP 3 -->
+        <article class="gs-card" id="step3">
+          <header>
+            <div class="gs-topline">
+              <img src="images/numbers/number3.png" alt="Step 3" class="gs-num">
+              <div>
+                <h2 class="gs-title">Set up a Script Editor (C#)</h2>
+                <span class="gs-tag">Reward: autocomplete + debugging + less pain</span>
+              </div>
+            </div>
+          </header>
+
+          <div class="gs-body">
+            <div class="gs-checkline">
+              <input type="checkbox" id="q3" data-xp="100">
+              <label for="q3">My C# editor works (I can open a script from Godot)</label>
+            </div>
+
+            <details class="gs-details">
+              <summary>▶ Pick ONE path (recommended + backup)</summary>
+              <div class="hint">
+                <p><strong>Recommended:</strong> JetBrains Rider (best experience for C#).</p>
+                <ul>
+                  <li>Install Rider.</li>
+                  <li>Open Rider once so it finishes setup.</li>
+                  <li>In Godot: Editor Settings → Dotnet → External Editor → choose Rider (or “Auto”).</li>
+                  <li>Open any C# script from Godot → Rider should launch.</li>
+                </ul>
+
+                <p><strong>Backup option:</strong> VS Code (if your laptop is struggling).</p>
+                <ul>
+                  <li>Install VS Code + C# extension.</li>
+                  <li>Set Godot external editor to VS Code.</li>
+                  <li>Open a script and confirm autocomplete works.</li>
+                </ul>
+
+                <div class="gs-code">
+                  Quick test:
+                  - Create script: Player.cs
+                  - Type: Console.WriteLine("hello");
+                  If it suggests Console/WriteLine -> you're good.
+                </div>
+              </div>
+            </details>
+
+            <div class="gs-actions">
+              <a class="gs-mini" target="_blank"
+                href="https://www.jetbrains.com/rider/">
+                Rider Site (optional)
+              </a>
+
+              <a class="gs-mini" target="_blank"
+                href="https://code.visualstudio.com/">
+                VS Code Site (optional)
+              </a>
+
+              <a class="gs-mini" target="_blank"
+                href="https://docs.google.com/presentation/d/16xJVtBWoy6pmolH2bxYpNQ8sFIq0z8gYlD40pLp3AdY/edit#slide=id.p">
+                Rider Slides (optional)
+              </a>
+
+              <a class="gs-mini" target="_blank"
+                href="https://docs.google.com/presentation/d/1cJeGbLo844TeqkArvpzsNyYUyb_Q9O29G5qrhaQEmxU/edit#slide=id.p">
+                VS Code Slides (optional)
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- STEP 4 -->
+        <article class="gs-card" id="step4">
+          <header>
+            <div class="gs-topline">
+              <img src="images/numbers/number4.png" alt="Step 4" class="gs-num">
+              <div>
+                <h2 class="gs-title">Do Lab 1 + Submit It</h2>
+                <span class="gs-tag">Reward: your first graded submission</span>
+              </div>
+            </div>
+          </header>
+
+          <div class="gs-body">
+            <div class="gs-checkline">
+              <input type="checkbox" id="q4" data-xp="100">
+              <label for="q4">Lab 1 is submitted in #share-lab</label>
+            </div>
+
+            <details class="gs-details">
+              <summary>▶ Submission checklist (copy/paste friendly)</summary>
+              <div class="hint">
+                <p><strong>Goal:</strong> finish Lab 1 (“Easy Artwork Printing”) and submit correctly.</p>
+                <ul>
+                  <li>Finish the lab steps.</li>
+                  <li>Close Godot (avoids weird zip issues).</li>
+                  <li>Zip the <strong>entire project folder</strong> (not just one file).</li>
+                  <li>Post in <strong>#share-lab</strong> as: <em>FirstName Lab 1</em></li>
+                  <li>Wait for a private grading thread under <strong>#grading</strong>.</li>
+                  <li>If feedback says “fix X”, update and resubmit (unlimited).</li>
+                </ul>
+
+                <div class="gs-code">
+                  Example message:
+                  "Bibhas Lab 1"
+                  (attach zip)
+                </div>
+
+                <p><strong>Common mistakes:</strong></p>
+                <ul>
+                  <li>Uploading only screenshots instead of the zip</li>
+                  <li>Zipping the wrong folder level</li>
+                  <li>Naming it something random so graders can’t find it</li>
+                </ul>
+              </div>
+            </details>
+
+            <div class="gs-actions">
+              <a href="https://bit.ly/428rsjZ" target="_blank" class="gs-mini">Ask for Help (optional)</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="gs-finish" id="finish">
+        <h2>✅ QUEST COMPLETE</h2>
+        <p>
+          Once you’ve checked off Steps 1–4, you’re officially set up. From here: keep doing labs, keep learning,
+          and keep shipping.
+        </p>
+        <a href="labs.html" class="button">Go to Labs</a>
+        <div style="margin-top:14px;">
+          <button class="gs-mini gs-danger" id="resetQuest" type="button">Reset Quest</button>
+          <a href="#top" class="gs-mini">Back to Top</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script type="text/javascript">
+    // sticky header
+    window.addEventListener('scroll', function () {
+      var header = document.querySelector('header')
+      header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+    function toggleMenu() {
+      var menuToggle = document.querySelector('.toggle');
+      var menu = document.querySelector('.menu');
+      menuToggle.classList.toggle('active');
+      menu.classList.toggle('active');
+    }
+
+    // Quest progress (saved)
+    const KEY = "gdc_quest_progress_v1";
+    const checks = Array.from(document.querySelectorAll('input[type="checkbox"][data-xp]'));
+    const xpText = document.getElementById("xpText");
+    const barFill = document.getElementById("barFill");
+    const barWrap = document.querySelector(".gs-bar");
+
+    function loadProgress() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+        checks.forEach(cb => cb.checked = !!saved[cb.id]);
+      } catch (e) { }
+      updateHud();
+    }
+
+    function saveProgress() {
+      const data = {};
+      checks.forEach(cb => data[cb.id] = cb.checked);
+      localStorage.setItem(KEY, JSON.stringify(data));
+    }
+
+    function updateHud() {
+      const total = checks.reduce((sum, cb) => sum + Number(cb.dataset.xp || 0), 0);
+      const earned = checks.reduce((sum, cb) => sum + (cb.checked ? Number(cb.dataset.xp || 0) : 0), 0);
+      const pct = total ? Math.round((earned / total) * 100) : 0;
+
+      xpText.textContent = `XP: ${earned} / ${total}`;
+      barFill.style.width = pct + "%";
+      barWrap.setAttribute("aria-valuenow", String(pct));
+
+      if (earned === total && total > 0) {
+        xpText.textContent = `XP: ${earned} / ${total} (MAX!)`;
+      }
+    }
+
+    checks.forEach(cb => {
+      cb.addEventListener("change", () => {
+        saveProgress();
+        updateHud();
+      });
+    });
+
+    document.getElementById("resetQuest").addEventListener("click", () => {
+      localStorage.removeItem(KEY);
+      checks.forEach(cb => cb.checked = false);
+      updateHud();
+    });
+
+    loadProgress();
+  </script>
 </body>
 
 </html>
